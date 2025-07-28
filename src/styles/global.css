@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.btn-padrao {
+  @apply bg-[blue] flex text-white py-2 px-4 rounded-full font-semibold  gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer lg:flex;
+}
+
+.menu-padrao {
+  @apply gap-5 hidden lg:flex
+}
+
+.menu-aberto {
+  @apply flex flex-col bg-white w-screen p-5 gap-3 items-center 
+}
+
+#sobre {
+  scroll-margin-top: 40vh;
+}
+
+#valores {
+  scroll-margin-top: 40vh;
+}
+
+#endereco{
+  scroll-margin-top: 40vh;
+}
+
+.back-anim {
+  animation: anim-back 2s infinite alternate ease-in-out,
+    aparecer 0.6s ease-out forwards;
+}
+
+.btn-anim {
+  animation: anim-back 2s infinite alternate ease-in-out;
+}
+
+.container-animado {
+  animation: animacaoMexer 5s infinite alternate ease-in-out;
+
+}
+
+@keyframes animacaoMexer {
+  0% {
+    transform: translate(0,
+        -20px);
+  }
+
+  50% {
+    transform: translate(0,
+        0);
+  }
+
+  100% {
+    transform: translate(0,
+        -20px);
+  }
+}
+
+
+@keyframes anim-back {
+  0% {
+    background-color: blue;
+  }
+
+  100% {
+    background-color: darkblue;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.appear-animation {
+  animation: aparecer 0.6s ease-out forwards;
+}

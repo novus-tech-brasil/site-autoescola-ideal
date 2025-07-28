@@ -1,0 +1,109 @@
+---
+import Logo from "../assets/logo.png";
+---
+
+<nav
+    class="flex flex-col gap-4 w-screen p-3 justify-between md:pl-[20%] md:pr-[20%] items-center bg-white z-50 fixed"
+>
+    <div class="flex gap-4 w-full justify-between items-center">
+        <img src={Logo.src} height="50" width="50" class="rounded-full" />
+        <div class="menu-padrao">
+            <div class="group">
+                <a class="cursor-pointer" href="#">Inicio</a>
+                <div
+                    class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+                >
+                </div>
+            </div>
+            <div class="group">
+                <a class="cursor-pointer" href="#sobre">Sobre</a>
+                <div
+                    class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+                >
+                </div>
+            </div>
+            <div class="group">
+                <a class="cursor-pointer" href="#valores">Valores</a>
+                <div
+                    class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+                >
+                </div>
+            </div>
+            <div class="group">
+                <a class="cursor-pointer" href="#endereco">Endereco</a>
+                <div
+                    class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+                >
+                </div>
+            </div>
+        </div>
+        <a class="btn-padrao hidden lg:block" id="btn-navbar">
+            Área do Aluno
+            <span class="material-symbols-outlined"> contacts_product </span>
+        </a>
+        <button class="group lg:hidden" id="btn-hamburguer">
+            <span
+                class="material-symbols-outlined group-hover:rotate-90 cursor-pointer transition duration-300 group-hover:!font-bold"
+                id="iconeMenu"
+            >
+                dehaze
+            </span>
+        </button>
+    </div>
+
+    <div class="hidden" id="menu">
+        <div class="group">
+            <a class="cursor-pointer" href="#">Inicio</a>
+            <div
+                class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+            >
+            </div>
+        </div>
+        <div class="group">
+            <a class="cursor-pointer" href="#sobre">Sobre</a>
+            <div
+                class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+            >
+            </div>
+        </div>
+        <div class="group">
+            <a class="cursor-pointer" href="#valores">Valores</a>
+            <div
+                class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+            >
+            </div>
+        </div>
+        <div class="group">
+            <a class="cursor-pointer" href="#endereco">Endereco</a>
+            <div
+                class="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"
+            >
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div
+    id="form"
+    class="fixed inset-0 z-50 flex justify-center items-center bg-black/50"
+    style="display: none;"
+>
+    <div
+        class="flex flex-col w-[90%] max-w-screen-md h-[90%] max-h-screen-md bg-white rounded-2xl shadow-xl overflow-hidden m-4"
+    >
+        <!-- Cabeçalho com botão fechar -->
+        <div class="w-full flex justify-end p-3">
+            <button
+                id="btn-fechar"
+                class="text-2xl text-gray-600 hover:text-red-600 transition duration-200 cursor-pointer"
+            >
+                <span class="material-symbols-outlined"> close </span>
+            </button>
+        </div>
+
+        <!-- Iframe -->
+        <iframe
+            src="https://novuscfc.app.br/"
+            class="w-full h-full rounded-2xl border-0 p-4"></iframe>
+    </div>
+</div>
