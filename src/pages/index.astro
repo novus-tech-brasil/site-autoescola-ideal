@@ -1,20 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import About from '../components/About.astro';
-import Layout from '../layouts/Layout.astro';
-import Greats from '../components/Greats.astro';
-import Prices from '../components/Prices.astro';
-import Address from '../components/Address.astro';
-
+import Welcome from "../components/Welcome.astro";
+import About from "../components/About.astro";
+import Layout from "../layouts/Layout.astro";
+import Greats from "../components/Greats.astro";
+import Prices from "../components/Prices.astro";
+import Address from "../components/Address.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
-	<About/>
-	<Greats/>
-	<Prices/>
-	<Address/>
+	<div class="flex flex-col gap-20 md:gap-30 lg:gap-50">
+		<Welcome />
+		<About />
+		<Greats />
+		<Prices />
+		<Address />
+	</div>
 </Layout>
