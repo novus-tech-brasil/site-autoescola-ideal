@@ -87,3 +87,9 @@ html {
 .appear-animation {
   animation: aparecer 0.6s ease-out forwards;
 }
+
+.text-vazado {
+  color: transparent; /* deixa a cor do texto invisível */
+  -webkit-text-stroke: 3.5px #000; /* contorno preto com 1.5px de largura */
+  text-stroke: 2.5px #000; /* pra navegadores que suportam */
+}

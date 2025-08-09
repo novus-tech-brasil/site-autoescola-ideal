@@ -1,51 +1,73 @@
 <section
     id="inicio"
-    class="grid grid-cols-1 xl:grid-cols-3 gap-2 md:pl-[20%] md:pr-[20%] items-center p-10 container-apper pt-[100px] lg:pt-[200px]"
+    class="grid grid-cols-1 xl:grid-cols-5 gap-6 md:px-[15%] items-center p-10 min-h-screen"
 >
-    <div class="flex flex-col w-full items-start col-span-2">
-        <div class="w-full">
-            <p
-                class="flex text-sm md:text-lg w-fit gap-2 bg-green-200 text-green-700 p-2 rounded-full items-center justify-center"
-            >
-                Mais de <strong>20 anos</strong> de Experiência
-                <span class="material-symbols-outlined" aria-hidden="true">
-                    check_circle
-                </span>
-            </p>
+    <!-- Conteúdo principal -->
+    <div class="flex flex-col w-full items-start col-span-3">
+        <!-- Logo e nome -->
+        <div class="flex items-center gap-4 mb-10 lg:mb-20">
+            <img
+                src="/favicon.png"
+                alt="Logo Autoescola Ideal"
+                class="h-12 w-12 object-contain"
+            />
+            <p class="text-2xl font-semibold">Autoescola IDEAL</p>
         </div>
 
-        <h1 class="text-5xl md:text-8xl text-start">
-            Autoescola de verdade é na
-            <strong class="text-[blue]">IDEAL</strong>
-        </h1>
+        <!-- Texto grande responsivo -->
+        <div class="flex flex-col gap-0 mt-5">
+            <p class="font-extralight text-xl sm:text-2xl tracking-widest">
+                Aqui em <strong class="font-semibold">Jales-SP</strong>
+            </p>
+            <h3 class="text-3xl sm:text-5xl font-medium">Tem a</h3>
+            <h3 class="text-5xl sm:text-7xl font-extrabold text-blue-600">
+                AUTOESCOLA
+            </h3>
+            <h3
+                class="text-6xl sm:text-8xl font-extrabold text-black text-vazado"
+            >
+                PERFEITA
+            </h3>
+            <h3 class="text-5xl sm:text-7xl font-extrabold">PARA VOCÊ</h3>
+        </div>
 
-        <p class="text-start w-full text-gray-500 text-sm md:text-xl">
-            A Autoescola de Jales-SP que vai te fazer conquistar o sonho de
-            Dirigir!
+        <!-- Parágrafo explicativo -->
+        <p
+            class="text-justify text-gray-600 text-sm md:text-lg lg:pr-16 mt-10 leading-relaxed"
+        >
+            A Autoescola de Jales-SP que vai transformar você no mestre das
+            ruas, guiando seu sonho de dirigir com segurança, confiança e
+            estilo! Aqui, cada aula é um passo certeiro rumo à liberdade,
+            autonomia e aquela sensação única de conquistar o volante de vez.
+            Vem acelerar com a gente e faça da direção uma experiência
+            inesquecível!
         </p>
 
+        <!-- Botão principal -->
         <a
-            href="#formulario"
-            class="btn-padrao mt-10"
+            href="https://wa.me/5517997572900"
+            class="btn-padrao mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
             role="button"
             aria-label="Começar processo de matrícula agora"
         >
             Começar agora
-            <span class="material-symbols-outlined" aria-hidden="true">
-                not_started
-            </span>
+            <span class="material-symbols-outlined" aria-hidden="true"
+                >not_started</span
+            >
         </a>
 
-        <p class="mt-2 text-sm md:text-lg font-bold">
+        <!-- Informações adicionais -->
+        <p class="mt-3 text-sm md:text-lg font-bold text-gray-700">
             Trabalhamos com: Carro (B), Moto (A), Ônibus (D) e Carreta (E)
         </p>
     </div>
 
+    <!-- Imagem lateral para desktop -->
+
     <div
-        class="hidden lg:block bg-[url('./carros.jpg')] bg-cover bg-center w-full h-full rounded-2xl shadow-xl border border-gray-100 container-animado"
+        class="hidden lg:block bg-[url('./img-ruiva.png')] bg-cover bg-center w-full h-full rounded-2xl shadow-xl border border-gray-100 col-span-2"
         role="img"
         aria-label="Aluna da Autoescola Ideal sorrindo"
     >
     </div>
-    
 </section>
