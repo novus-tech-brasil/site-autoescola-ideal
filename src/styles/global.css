@@ -11,11 +11,11 @@ html {
 }
 
 .menu-padrao {
-  @apply gap-5 hidden lg:flex
+  @apply gap-5 hidden lg:flex;
 }
 
 .menu-aberto {
-  @apply flex flex-col bg-white w-screen p-5 gap-3 items-center 
+  @apply flex flex-col bg-white w-screen p-5 gap-3 items-center ;
 }
 
 #sobre {
@@ -92,4 +92,8 @@ html {
   color: transparent; /* deixa a cor do texto invisível */
   -webkit-text-stroke: 3.5px #000; /* contorno preto com 1.5px de largura */
   text-stroke: 2.5px #000; /* pra navegadores que suportam */
+}
+
+.input-button {
+  @apply p-4 rounded-lg bg-indigo-400 h-10 w-10 flex items-center justify-center text-xl font-bold transition-all duration-200 hover:opacity-70 hover:text-white cursor-pointer;
 }

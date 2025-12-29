@@ -33,15 +33,17 @@ function fechar() {
 let menuAberto = false;
 
 const button = document.getElementById('btn-navbar');
-button.addEventListener("click", abrir);
+if (button) button.addEventListener("click", abrir);
 const buttonFechar = document.getElementById('btn-fechar');
-buttonFechar.addEventListener("click", fechar);
+if (buttonFechar) buttonFechar.addEventListener("click", fechar);
 
 const buttonHamburguer = document.getElementById('btn-hamburguer');
+console.log(buttonHamburguer);
 const menu = document.getElementById('menu');
 const iconeMenu = document.getElementById('iconeMenu');
 
 function abrirMenu() {
+  console.log('clicou');
   if (!menuAberto) {
     menuAberto = true;
     menu.className = "menu-aberto";
@@ -55,4 +57,9 @@ function abrirMenu() {
 
 }
 
-buttonHamburguer.addEventListener('click', abrirMenu)
+if (buttonHamburguer) {
+  buttonHamburguer.addEventListener('click', abrirMenu);
+}
+
+// Expor globalmente para onclick inline
+window.abrirMenu = abrirMenu;

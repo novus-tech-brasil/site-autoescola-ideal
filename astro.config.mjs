@@ -3,14 +3,14 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from '@astrojs/react';
 
-const site = 'https://autoescolaidealjales.com.br';
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site,
-
+  site: "https://autoescolaidealjales.com.br",
+  base: "/",
   vite: {
     plugins: [tailwindcss()],
   },
 
-  integrations: [react()],
+  integrations: [react(), sitemap()],
 });

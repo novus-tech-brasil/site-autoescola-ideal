@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -13,7 +13,6 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>Auto Escola Ideal</title>
     <title>Autoescola Ideal Jales - CNH Rápida e Preço Justo</title>
     <meta
       name="description"
@@ -51,10 +50,10 @@ import Footer from "../components/Footer.astro";
   </head>
 
   <body class="flex flex-col">
+    <Navbar client:load />
     <main class="flex flex-col gap-10  bg-gradient-to-b from-white via-gray-50 to-gray-100">
       <slot />
     </main>
-
     <Footer />
   </body>
 </html>
@@ -68,4 +67,4 @@ import Footer from "../components/Footer.astro";
   }
 </style>
 
-<script src="../javascript/scripts.js"></script>
+<script is:inline src="../javascript/scripts.js"></script>

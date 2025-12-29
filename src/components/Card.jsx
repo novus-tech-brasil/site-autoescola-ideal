@@ -1,4 +1,3 @@
-import React from '@astrojs/react'
 import './Card.css';
 
 export default function Card() {
