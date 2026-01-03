@@ -270,7 +270,7 @@ export default function Calculator() {
             `Valor Aproximado ${formatter.format(valorTotal)}%0A` +
             `${numeroParcelas > 6 ? 'Com juros da maquininha inclusos!%0A%0A' : 'SEM JUROS%0A%0A'}` +
             `Por favor, me envie mais informações sobre como proceder. Obrigado!`;
-        window.open(`https://wa.me/5567981368080?text=${mensagem}`, '_blank');
+        window.open(`https://wa.me/5517997572900?text=${mensagem}`, '_blank');
     }
 
     const Buttons = () => {
