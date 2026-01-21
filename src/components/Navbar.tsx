@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex flex-col gap-4 w-screen p-3 justify-between px-10 md:px-[15%] md:pr-[20%] items-center bg-white z-50 fixed">
+      <nav className="flex flex-col gap-4 w-screen p-3 justify-between px-20  items-center bg-white z-50 fixed">
         <div className="flex gap-4 w-full justify-between items-center">
           {/* Logo */}
           <img 
@@ -63,7 +63,7 @@ export default function Navbar() {
 
           {/* Botão Área do Aluno (Desktop) */}
           <a 
-            className="bg-blue-600 flex text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer hidden lg:flex" 
+            className="bg-blue-600 text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer hidden lg:flex" 
             href="https://novuscfc.app.br/" 
             target="_blank"
             rel="noopener noreferrer"
@@ -130,31 +130,6 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-
-      {/* Modal Form */}
-      {formAberto && (
-        <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/50">
-          <div className="flex flex-col w-[90%] max-w-screen-md h-[90%] max-h-screen-md bg-white rounded-2xl shadow-xl overflow-hidden m-4">
-            {/* Cabeçalho com botão fechar */}
-            <div className="w-full flex justify-end p-3">
-              <button
-                onClick={fecharForm}
-                className="text-2xl text-gray-600 hover:text-red-600 transition duration-200 cursor-pointer"
-                aria-label="Fechar modal"
-              >
-                <span className="material-symbols-outlined">close</span>
-              </button>
-            </div>
-
-            {/* Iframe */}
-            <iframe
-              src="https://novuscfc.app.br/"
-              className="w-full h-full rounded-2xl border-0 p-4"
-              title="Área do Aluno"
-            ></iframe>
-          </div>
-        </div>
-      )}
     </>
   );
 }

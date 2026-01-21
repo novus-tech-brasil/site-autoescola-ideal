@@ -1,69 +1,61 @@
 <section
     id="inicio"
-    class="grid grid-cols-1 xl:grid-cols-5 gap-6 px-5 md:px-[15%] items-center p-10 min-h-screen"
+    class="grid grid-cols-1 lg:grid-cols-5 gap-8 px-5 lg:px-20 items-center min-h-screen pt-30 lg:pt-20 bg-blue-700 text-white"
 >
     <!-- Conteúdo principal -->
-    <div class="flex flex-col w-full items-start col-span-3">
-        <!-- Logo e nome -->
-        <div class="flex items-center gap-4 mb-10 lg:mb-20">
-            <img
-                src="/favicon.png"
-                alt="Logo Autoescola Ideal"
-                class="h-12 w-12 object-contain"
-            />
-            <p class="text-2xl font-semibold">Autoescola IDEAL</p>
-        </div>
-
+    <div class="flex flex-col w-full items-start col-span-2 gap-6">
         <!-- Texto grande responsivo -->
-        <div class="flex flex-col gap-0 mt-5">
-            <p class="font-extralight text-xl sm:text-2xl tracking-widest">
-                Aqui em <strong class="font-semibold">Jales-SP</strong>
-            </p>
-            <h3 class="text-2xl sm:text-5xl font-medium">Tem a</h3>
-            <h3 class="text-4xl sm:text-7xl font-extrabold text-blue-600">
-                AUTOESCOLA
-            </h3>
-            <h3 class="text-6xl sm:text-8xl font-extrabold text-yellow-400">
-                PERFEITA
-            </h3>
-            <h3 class="text-4xl sm:text-7xl font-extrabold">PARA VOCÊ</h3>
+        <div class="flex flex-col gap-0">
+            <h3 class="text-2xl font-medium text-gray-200">A autoescola</h3>
+            <h1 class="text-8xl md:text-9xl font-bold text-blue-200">IDEAL</h1>
+            <h2 class="text-3xl md:text-4xl font-semibold text-gray-300">
+                para você!
+            </h2>
         </div>
 
-        <!-- Parágrafo explicativo -->
+        <!-- Descrição -->
         <p
-            class="text-justify text-gray-600 text-sm md:text-lg lg:pr-16 mt-10 leading-relaxed"
+            class="text-justify text-blue-300 !text-[16px] md:text-lg leading-relaxed max-w-md"
         >
             A Autoescola de Jales-SP que ensina você a dirigir com segurança,
             confiança e estilo, transformando cada aula em um passo rumo à
             liberdade e autonomia.
         </p>
 
-        <!-- Botão principal -->
+        <!-- CTA Button -->
         <a
             href="https://wa.me/5517997572900"
-            class="btn-padrao mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+            class="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-amber-400 text-amber-900 font-semibold hover:bg-amber-600 hover:text-amber-200 transition transform hover:scale-105"
             role="button"
             target="_blank"
             aria-label="Começar processo de matrícula agora"
         >
             Começar agora
             <span class="material-symbols-outlined" aria-hidden="true"
-                >not_started</span
+                >arrow_forward</span
             >
         </a>
 
         <!-- Informações adicionais -->
-        <p class="mt-3 text-sm md:text-lg font-bold text-gray-700">
+        <p
+            class="text-sm md:text-base font-semibold text-blue-200 border-l-4 border-blue-600 pl-4"
+        >
             Trabalhamos com: Carro (B), Moto (A), Ônibus (D) e Carreta (E)
         </p>
     </div>
 
     <!-- Imagem lateral para desktop -->
-
-    <div
-        class="hidden lg:block bg-[url('/img-ruiva.png')] bg-cover bg-center w-full h-full rounded-2xl shadow-xl border border-gray-100 col-span-2"
-        role="img"
-        aria-label="Aluna da Autoescola Ideal sorrindo"
-    >
+    <div class="w-full h-full object-contain object-center col-span-3">
+        <div class="flex relative">
+            <img
+                src="/img-inicio.png"
+                alt="Aluna da Autoescola Ideal sorrindo"
+                class="w-full h-full object-contain object-center"
+            />
+            <div
+                class="bg-linear-0 from-blue-700 to-transparent absolute bottom-0 w-full h-20"
+            >
+            </div>
+        </div>
     </div>
 </section>
