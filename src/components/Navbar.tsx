@@ -124,7 +124,7 @@ export default function Navbar() {
             ))}
 
             <a 
-              className="bg-blue-600 w-full flex text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer" 
+              className="bg-blue-600 w-full flex text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer text-[13px] min-w-[200px]" 
               href="https://novuscfc.app.br/" 
               target="_blank"
               rel="noopener noreferrer"
