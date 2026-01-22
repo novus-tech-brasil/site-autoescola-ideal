@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
 import Logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [menuAberto, setMenuAberto] = useState(false);
   const [formAberto, setFormAberto] = useState(false);
 
+  useEffect(() => {
+    const navbar = document.getElementById('navbar');
+    const handleScroll = () => {
+      if (window.scrollY > 0){
+        navbar?.classList.remove("w-[90%]", "mt-5", "rounded-2xl");
+        navbar?.classList.add("w-screen", "mt-0", "shadow-lg", "transition-all", "duration-300");
+      }else {
+        navbar?.classList.add("w-[90%]", "mt-5", "rounded-2xl");
+        navbar?.classList.remove("w-screen", "mt-0", "shadow-lg");
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleMenu = () => {
     setMenuAberto(!menuAberto);
-  };
-
-  const abrirForm = () => {
-    setFormAberto(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const fecharForm = () => {
-    setFormAberto(false);
-    document.body.style.overflow = '';
   };
 
   const fecharMenu = () => {
@@ -37,8 +42,8 @@ export default function Navbar() {
   ];
 
   return (
-    <>
-      <nav className="flex flex-col gap-4 w-screen p-3 justify-between px-20  items-center bg-white z-50 fixed">
+    <div className='w-screen flex justify-center'>
+      <nav id='navbar' className="flex flex-col gap-4 w-[90%] mt-5 p-3 rounded-2xl justify-between px-20  items-center bg-white z-50 fixed">
         <div className="flex gap-4 w-full justify-between items-center">
           {/* Logo */}
           <img 
@@ -93,7 +98,7 @@ export default function Navbar() {
 
         {/* Menu Mobile */}
         {menuAberto && (
-          <div className="flex flex-col bg-white w-screen p-5 gap-3 items-center">
+          <div className="flex flex-col bg-white w-[90%] p-5 gap-3 items-center">
             <div className="group">
               <a 
                 className="cursor-pointer" 
@@ -119,7 +124,7 @@ export default function Navbar() {
             ))}
 
             <a 
-              className="bg-blue-600 flex text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer" 
+              className="bg-blue-600 w-full flex text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer" 
               href="https://novuscfc.app.br/" 
               target="_blank"
               rel="noopener noreferrer"
@@ -130,6 +135,6 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-    </>
+    </div>
   );
 }
