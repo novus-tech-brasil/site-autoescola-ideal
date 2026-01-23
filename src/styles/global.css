@@ -98,16 +98,3 @@ html {
   @apply p-4 rounded-lg bg-indigo-400 h-10 w-10 flex items-center justify-center text-xl font-bold transition-all duration-200 hover:opacity-70 hover:text-white cursor-pointer;
 }
 
-.glass {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  mask-image: linear-gradient(
-    to top,
-    white 5%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0.2) 75%,
-    transparent 80%
-  );
-}
-

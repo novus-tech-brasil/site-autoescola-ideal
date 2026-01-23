@@ -55,7 +55,6 @@ import Footer from "../components/Footer.astro";
       class="flex flex-col gap-10 bg-gradient-to-b from-white via-gray-50 to-gray-100"
     >
       <slot />
-      <div class="h-[20vh] w-screen fixed bottom-0 z-[9998] glass"></div>
       <a
         href="https://wa.me/5517997572900"
         class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition transform hover:scale-110 overflow-hidden animate-bounce z-[9999] fixed right-6 bottom-6"
@@ -66,6 +65,9 @@ import Footer from "../components/Footer.astro";
         <img src="/icone-whatsapp.jpg" alt="WhatsApp" />
       </a>
     </main>
+
+    <div class="h-[20vh] w-screen fixed bottom-0 z-[9998] blur-fade-foda"></div>
+
     <button class="rounded-full fixed right-10 bottom-10"> </button>
     <Footer />
   </body>
@@ -77,6 +79,26 @@ import Footer from "../components/Footer.astro";
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .blur-fade-foda {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    mask-image: linear-gradient(
+      to top,
+      black 5%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.2) 75%,
+      transparent 80%
+    );
+    -webkit-mask-image: linear-gradient(
+      to top,
+      black 5%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.2) 75%,
+      transparent 80%
+    );
   }
 </style>
 
