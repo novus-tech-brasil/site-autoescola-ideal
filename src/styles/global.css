@@ -97,4 +97,3 @@ html {
 .input-button {
   @apply p-4 rounded-lg bg-indigo-400 h-10 w-10 flex items-center justify-center text-xl font-bold transition-all duration-200 hover:opacity-70 hover:text-white cursor-pointer;
 }
-

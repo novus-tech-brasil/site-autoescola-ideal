@@ -5,8 +5,10 @@ import Calculator from "../components/calculator";
 
 <Layout>
     <section id="calculadora" class="w-full py-20 bg-neutral-50">
-        <div class="corpo mx-auto justify-center items-center flex flex-col mt-10 md:mt-20">
-            <div class="text-center mb-12">
+        <div
+            class="corpo mx-auto justify-center items-center flex flex-col mt-10 md:mt-20"
+        >
+            <div class="text-center mb-12 px-8">
                 <p
                     class="text-primary font-semibold uppercase tracking-wider mb-2"
                 >
@@ -19,6 +21,14 @@ import Calculator from "../components/calculator";
                     Use nossa calculadora interativa para descobrir o melhor
                     pacote para você.
                 </p>
+                <div
+                    class="flex w-full px-10 gap-5 py-5 bg-green-600 rounded-full mt-4 animate-pulse justify-between text-white"
+                >
+                    <p>Arraste para baixo e monte o seu plano!</p>
+                    <span class="material-symbols-outlined">
+                        arrow_cool_down
+                    </span>
+                </div>
             </div>
 
             <div class="p-5 max-w-[1500px]">
