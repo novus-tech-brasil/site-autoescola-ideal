@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CoursePage from '../../components/CoursePage';
+import { getCourseBySlugs } from '../../lib/courses';
+import { generateCourseSchema } from '../../lib/schemas';
+
+const course = getCourseBySlugs('transporte-escolar');
+
+if (!course) {
+  return new Response('Curso não encontrado', { status: 404 });
+}
+
+const courseSchema = generateCourseSchema(course);
+const whatsappNumber = '18999999999'; // Ajustar com número real
+---
+
+<Layout>
+  <CoursePage client:load course={course} whatsappNumber={whatsappNumber} />
+  
+  <!-- Schema Markup for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+</Layout>

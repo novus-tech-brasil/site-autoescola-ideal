@@ -1,61 +1,79 @@
 <section
     id="inicio"
-    class="grid grid-cols-1 lg:grid-cols-5 gap-8 px-5 lg:px-20 items-center min-h-screen pt-30 lg:pt-20 bg-blue-700 text-white"
+    class="flex flex-col h-fit md:min-h-screen w-full relative bg-[#071CF8] pt-20 max-h-screen"
 >
-    <!-- Conteúdo principal -->
-    <div class="flex flex-col w-full items-start col-span-2 gap-6">
-        <!-- Texto grande responsivo -->
-        <div class="flex flex-col gap-0">
-            <h3 class="text-2xl font-medium text-gray-200">A autoescola</h3>
-            <h1 class="text-8xl md:text-9xl font-bold text-blue-200">IDEAL</h1>
-            <h2 class="text-3xl md:text-4xl font-semibold text-gray-300">
-                para você!
-            </h2>
+    <div
+        class="grid grid-cols-1 lg:grid-cols-5 gap-8 pb-0 bg-[#071CF8] text-white h-fit w-full px-13 lg:px-22 pt-12 relative z-10"
+    >
+        <!-- Conteúdo principal -->
+        <div class="flex flex-col w-full items-center lg:items-start col-span-2 gap-6 z-10">
+            <!-- Texto grande responsivo -->
+            <div class="flex flex-col gap-0">
+                <h3
+                    class="text-lg md:text-xl font-medium text-gray-200 tracking-wide"
+                >
+                    A autoescola
+                </h3>
+                <h1
+                    class="text-7xl md:text-8xl font-black text-[#FFCB00] leading-none"
+                >
+                    IDEAL
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-light text-gray-200 mt-2">
+                    para você!
+                </h2>
+            </div>
+
+            <!-- Descrição -->
+            <p
+                class="text-justify text-gray-200 text-base md:text-lg leading-relaxed max-w-md font-light"
+            >
+                A Autoescola de Jales-SP que ensina você a dirigir com
+                segurança, confiança e estilo, transformando cada aula em um
+                passo rumo à liberdade e autonomia.
+            </p>
+
+            <!-- CTA Button -->
+            <a
+                href="https://wa.me/5517997572900"
+                class="inline-flex items-center gap-3 px-8 py-3 rounded-lg w-full max-w-[300px] bg-[#FFCB00] text-[#071CF8] font-semibold hover:bg-[#E6B800] transition-colors duration-300"
+                role="button"
+                target="_blank"
+                aria-label="Começar processo de matrícula agora"
+            >
+                Começar agora
+                <span class="material-symbols-outlined" aria-hidden="true"
+                    >arrow_forward</span
+                >
+            </a>
+
+            <!-- Informações adicionais -->
+            <div
+                class="text-sm md:text-base font-medium text-[#FFCB00] border-l-4 border-[#FFCB00] pl-4 py-3 px-4"
+            >
+                <span class="block">Trabalhamos com:</span>
+                <span class="font-semibold"
+                    >Carro (B) • Moto (A) • Ônibus (D) • Carreta (E)</span
+                >
+            </div>
         </div>
 
-        <!-- Descrição -->
-        <p
-            class="text-justify text-blue-300 !text-[16px] md:text-lg leading-relaxed max-w-md"
-        >
-            A Autoescola de Jales-SP que ensina você a dirigir com segurança,
-            confiança e estilo, transformando cada aula em um passo rumo à
-            liberdade e autonomia.
-        </p>
-
-        <!-- CTA Button -->
-        <a
-            href="https://wa.me/5517997572900"
-            class="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-amber-400 text-amber-900 font-semibold hover:bg-amber-600 hover:text-amber-200 transition transform hover:scale-105"
-            role="button"
-            target="_blank"
-            aria-label="Começar processo de matrícula agora"
-        >
-            Começar agora
-            <span class="material-symbols-outlined" aria-hidden="true"
-                >arrow_forward</span
-            >
-        </a>
-
-        <!-- Informações adicionais -->
-        <p
-            class="text-sm md:text-base font-semibold text-blue-200 border-l-4 border-blue-600 pl-4"
-        >
-            Trabalhamos com: Carro (B), Moto (A), Ônibus (D) e Carreta (E)
-        </p>
+        <div></div>
     </div>
-
-    <!-- Imagem lateral para desktop -->
-    <div class="w-full h-full object-contain object-center col-span-3">
-        <div class="flex relative">
+    <div
+        class="w-full h-full justify-end items-end col-span-3 z-10 absolute right-0 -bottom-30 2xl:-bottom-20 hidden lg:flex pointer-events-none"
+    >
+        <div class="flex h-full">
             <img
                 src="/img-inicio.png"
                 alt="Aluna da Autoescola Ideal sorrindo"
-                class="w-full h-full object-contain object-center"
+                class="w-full h-full max-h-[78vh] object-contain object-bottom"
             />
-            <div
-                class="bg-linear-0 from-blue-700 to-transparent absolute bottom-0 w-full h-20"
-            >
-            </div>
         </div>
+    </div>
+    <div
+        class="absolute -bottom-15 left-0 w-full h-auto pointer-events-none z-20 hidden lg:block"
+    >
+        <img src="/wave.svg" alt="" aria-hidden="true" class="" />
     </div>
 </section>

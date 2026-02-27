@@ -1,0 +1,142 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="px-4 md:px-6 py-12 md:py-16 bg-white border-b border-gray-100">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+          Cursos Especializantes
+        </h1>
+        <p class="text-base md:text-lg text-gray-600">
+          Amplie suas habilidades com cursos certificados
+        </p>
+      </div>
+    </section>
+
+    <!-- Grid de Cursos -->
+    <section class="px-4 md:px-6 py-12 md:py-16">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Curso 1 -->
+          <a href="/cursos/transporte-cargas-indivisiveis">
+            <div class="bg-blue-50 rounded-md overflow-hidden border border-blue-100 h-full flex flex-col hover:border-blue-300 transition">
+              <div class="h-32 md:h-40 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-5xl">local_shipping</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Cargas Indivisíveis</h3>
+                <p class="text-sm text-gray-600 mb-4 flex-1">Transporte especializado de cargas grandes.</p>
+                <div class="text-2xl font-black text-blue-600 mb-2">R$ 285,99</div>
+                <p class="text-xs text-gray-500 mb-3"><span class="line-through">R$ 380,00</span> em promoção</p>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded transition w-full">Ver Curso</button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Curso 2 -->
+          <a href="/cursos/transporte-emergencial">
+            <div class="bg-red-50 rounded-md overflow-hidden border border-red-100 h-full flex flex-col hover:border-red-300 transition">
+              <div class="h-32 md:h-40 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-5xl">emergency</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Emergencial</h3>
+                <p class="text-sm text-gray-600 mb-4 flex-1">Condução segura de veículos de emergência.</p>
+                <div class="text-2xl font-black text-red-600 mb-2">R$ 285,99</div>
+                <p class="text-xs text-gray-500 mb-3"><span class="line-through">R$ 380,00</span> em promoção</p>
+                <button class="bg-red-600 hover:bg-red-700 text-white text-sm font-bold py-2 px-3 rounded transition w-full">Ver Curso</button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Curso 3 -->
+          <a href="/cursos/direcao-defensiva">
+            <div class="bg-green-50 rounded-md overflow-hidden border border-green-100 h-full flex flex-col hover:border-green-300 transition">
+              <div class="h-32 md:h-40 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-5xl">shield_person</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Direção Defensiva</h3>
+                <p class="text-sm text-gray-600 mb-4 flex-1">Técnicas avançadas de direção segura.</p>
+                <div class="text-2xl font-black text-green-600 mb-2">R$ 285,99</div>
+                <p class="text-xs text-gray-500 mb-3"><span class="line-through">R$ 380,00</span> em promoção</p>
+                <button class="bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2 px-3 rounded transition w-full">Ver Curso</button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Curso 4 -->
+          <a href="/cursos/legislacao-transito">
+            <div class="bg-purple-50 rounded-md overflow-hidden border border-purple-100 h-full flex flex-col hover:border-purple-300 transition">
+              <div class="h-32 md:h-40 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-5xl">gavel</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Legislação</h3>
+                <p class="text-sm text-gray-600 mb-4 flex-1">Domínio completo das leis de trânsito.</p>
+                <div class="text-2xl font-black text-purple-600 mb-2">R$ 285,99</div>
+                <p class="text-xs text-gray-500 mb-3"><span class="line-through">R$ 380,00</span> em promoção</p>
+                <button class="bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold py-2 px-3 rounded transition w-full">Ver Curso</button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Curso 5 -->
+          <a href="/cursos/manobras-especializadas">
+            <div class="bg-yellow-50 rounded-md overflow-hidden border border-yellow-100 h-full flex flex-col hover:border-yellow-300 transition">
+              <div class="h-32 md:h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-5xl">settings</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Manobras</h3>
+                <p class="text-sm text-gray-600 mb-4 flex-1">Domine manobras complexas e desafiadoras.</p>
+                <div class="text-2xl font-black text-yellow-600 mb-2">R$ 285,99</div>
+                <p class="text-xs text-gray-500 mb-3"><span class="line-through">R$ 380,00</span> em promoção</p>
+                <button class="bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-bold py-2 px-3 rounded transition w-full">Ver Curso</button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Curso 6 -->
+          <a href="/cursos/eficiencia-combustivel">
+            <div class="bg-orange-50 rounded-md overflow-hidden border border-orange-100 h-full flex flex-col hover:border-orange-300 transition">
+              <div class="h-32 md:h-40 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-5xl">eco</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Eficiência</h3>
+                <p class="text-sm text-gray-600 mb-4 flex-1">Economize combustível e dirija consciente.</p>
+                <div class="text-2xl font-black text-orange-600 mb-2">R$ 285,99</div>
+                <p class="text-xs text-gray-500 mb-3"><span class="line-through">R$ 380,00</span> em promoção</p>
+                <button class="bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold py-2 px-3 rounded transition w-full">Ver Curso</button>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="px-4 md:px-6 py-12 md:py-16 bg-blue-600">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-black text-white mb-4">
+          Escolha seu curso agora
+        </h2>
+        <p class="text-base text-blue-100 mb-6">
+          Qualidade e preço justo para sua profissionalização
+        </p>
+        <a
+          href="https://wa.me/5517997572900"
+          target="_blank"
+          class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded transition"
+        >
+          <span class="material-symbols-outlined">whatsapp</span>
+          Conversar no WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

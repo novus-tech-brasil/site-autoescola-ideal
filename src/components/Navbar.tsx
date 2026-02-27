@@ -10,10 +10,10 @@ export default function Navbar() {
     const navbar = document.getElementById('navbar');
     const handleScroll = () => {
       if (window.scrollY > 0){
-        navbar?.classList.remove("w-[90%]", "mt-5", "rounded-2xl");
+        navbar?.classList.remove("w-[90%]", "mt-5", "rounded-md");
         navbar?.classList.add("w-screen", "mt-0", "shadow-lg", "transition-all", "duration-300");
       }else {
-        navbar?.classList.add("w-[90%]", "mt-5", "rounded-2xl");
+        navbar?.classList.add("w-[90%]", "mt-5", "rounded-md");
         navbar?.classList.remove("w-screen", "mt-0", "shadow-lg");
       }
     }
@@ -32,6 +32,7 @@ export default function Navbar() {
     { href: '/#sobre', label: 'Sobre' },
     { href: '/planos', label: 'Planos' },
     { href: '/#endereco', label: 'Endereço' },
+    { href: '/cursos', label: 'Cursos' },
   ];
 
   const desktopLinks = [
@@ -39,42 +40,43 @@ export default function Navbar() {
     { href: '/#sobre', label: 'Sobre' },
     { href: '/planos', label: 'Planos' },
     { href: '/#endereco', label: 'Endereço' },
+    { href: '/cursos', label: 'Cursos' },
   ];
 
   return (
     <div className='w-screen flex justify-center'>
-      <nav id='navbar' className="flex flex-col gap-4 w-[90%] mt-5 p-3 rounded-2xl justify-between px-20  items-center bg-white z-50 fixed">
+      <nav id='navbar' className="flex flex-col gap-4 w-[90%] mt-5 p-4 rounded-lg justify-between px-6 lg:px-10 items-center bg-white z-50 fixed border border-gray-200 transition-all duration-300">
         <div className="flex gap-4 w-full justify-between items-center">
           {/* Logo */}
           <img 
             src={Logo.src} 
-            height="50" 
-            width="50" 
-            className="rounded-full" 
+            height="45" 
+            width="45" 
+            className="rounded-lg" 
             alt="Logo Autoescola Ideal"
           />
 
           {/* Menu Desktop */}
-          <div className="gap-5 hidden lg:flex">
+          <div className="gap-8 hidden lg:flex items-center">
             {desktopLinks.map((link) => (
-              <div key={link.href} className="group">
-                <a className="cursor-pointer" href={link.href}>
+              <div key={link.href} className="group relative">
+                <a className="cursor-pointer text-gray-700 font-medium text-sm transition-colors duration-300 hover:text-[#071CF8]" href={link.href}>
                   {link.label}
                 </a>
-                <div className="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"></div>
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] group-hover:w-full transition-all duration-300"></div>
               </div>
             ))}
           </div>
 
           {/* Botão Área do Aluno (Desktop) */}
           <a 
-            className="bg-blue-600 text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer hidden lg:flex" 
+            className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-white bg-[#071CF8] hover:bg-[#041092] transition-colors duration-300" 
             href="https://novuscfc.app.br/" 
             target="_blank"
             rel="noopener noreferrer"
           >
             Área do Aluno
-            <span className="material-symbols-outlined">contacts_product</span>
+            <span className="material-symbols-outlined text-base">contacts_product</span>
           </a>
 
           {/* Botão Hamburger (Mobile) */}
@@ -98,39 +100,39 @@ export default function Navbar() {
 
         {/* Menu Mobile */}
         {menuAberto && (
-          <div className="flex flex-col bg-white w-[90%] p-5 gap-3 items-center">
-            <div className="group">
+          <div className="flex flex-col bg-white w-[90%] p-6 gap-4 items-center rounded-lg border border-gray-200">
+            <div className="group relative w-full">
               <a 
-                className="cursor-pointer" 
+                className="cursor-pointer text-gray-700 font-medium text-sm transition-colors duration-300 hover:text-[#0f3a7d]" 
                 href="/"
                 onClick={fecharMenu}
               >
                 Inicio
               </a>
-              <div className="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"></div>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] group-hover:w-full transition-all duration-300"></div>
             </div>
 
             {menuLinks.map((link) => (
-              <div key={link.href} className="group">
+              <div key={link.href} className="group relative w-full">
                 <a 
-                  className="cursor-pointer" 
+                  className="cursor-pointer text-gray-700 font-medium text-sm transition-colors duration-300 hover:text-[#071CF8]" 
                   href={link.href}
                   onClick={fecharMenu}
                 >
                   {link.label}
                 </a>
-                <div className="w-0 h-1 bg-blue-700 group-hover:w-full transition-all duration-300"></div>
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] group-hover:w-full transition-all duration-300"></div>
               </div>
             ))}
 
             <a 
-              className="bg-blue-600 w-full flex text-white py-2 px-4 rounded-full font-semibold gap-4 justify-center items-center hover:bg-blue-900 transition duration-300 cursor-pointer text-[13px] min-w-[200px]" 
+              className="bg-[#071CF8] w-full flex text-white py-2.5 px-4 rounded-lg font-semibold gap-2 justify-center items-center hover:bg-[#041092] transition-colors duration-300 text-sm" 
               href="https://novuscfc.app.br/" 
               target="_blank"
               rel="noopener noreferrer"
             >
               Área do Aluno
-              <span className="material-symbols-outlined">contacts_product</span>
+              <span className="material-symbols-outlined text-base">contacts_product</span>
             </a>
           </div>
         )}
