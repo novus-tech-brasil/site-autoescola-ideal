@@ -1,9 +1,9 @@
 import React, { useState, useEffect, type JSX } from 'react'
 
 type tipos = 'carroMoto' | 'moto' | 'carro'
-const valorOriginalAula = 150
+const valorOriginalAula = 165
 const custoAluguelPorVeiculo = 49.99;
-const numeroParcelasMaximo = 18;
+const numeroParcelasMaximo = 12;
 const numeroParcelasSemJuros = 1;
 
 const taxas: Record<number, number> = {
@@ -304,6 +304,50 @@ export default function Calculator() {
     const testDescontoAula = valorOriginalAula - valorAula > 0 ? true : false;
     const descontoAula = (valorOriginalAula - valorAula) * 100 / valorOriginalAula;
 
+    const MilestoneInfo = () => {
+        let mensagem = '';
+        let proximoMilestone = '';
+        let aulasProximas = 0;
+
+        if (aulasTotaisSoma < 4) {
+            proximoMilestone = '39% de desconto';
+            aulasProximas = 4 - aulasTotaisSoma;
+            mensagem = `Faltam apenas ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para você ganhar ${proximoMilestone}!`;
+        } else if (aulasTotaisSoma >= 4 && aulasTotaisSoma < 10) {
+            proximoMilestone = '45% de desconto';
+            aulasProximas = 10 - aulasTotaisSoma;
+            mensagem = `Faltam ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para desbloqueiar ${proximoMilestone}!`;
+        } else if (aulasTotaisSoma >= 10 && aulasTotaisSoma < 15) {
+            proximoMilestone = '48% de desconto (+ aluguel reduzido)';
+            aulasProximas = 15 - aulasTotaisSoma;
+            mensagem = `Faltam ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para desbloqueiar ${proximoMilestone}!`;
+        } else if (aulasTotaisSoma >= 15 && aulasTotaisSoma < 20) {
+            proximoMilestone = '51% de desconto (+ aluguel grátis)';
+            aulasProximas = 20 - aulasTotaisSoma;
+            mensagem = `Faltam ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para desbloqueiar ${proximoMilestone}!`;
+        } else if (aulasTotaisSoma >= 20) {
+            mensagem = '✓ Você desbloqueou o melhor desconto! 51% de desconto + Aluguel Grátis!';
+        }
+
+        return (
+            <div className="relative mt-4 md:mt-5 flex overflow-hidden rounded-lg border border-green-500/30 bg-green-500/5 p-4 md:p-5 shadow-sm min-h-20 justify-start items-center">
+                <div className="relative z-10 flex items-center gap-4">
+                    <span className="material-symbols-outlined text-green-600 text-5xl flex-shrink-0">
+                        trending_up
+                    </span>
+                    <div className="flex flex-col">
+                        <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-700">
+                            Próximo Milestone
+                        </span>
+                        <span className="text-sm md:text-base text-gray-900 font-semibold mt-1">
+                            {mensagem}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
 
     return (
         <div className='w-full bg-white p-5 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-6 transition-all duration-300'>
@@ -345,6 +389,7 @@ export default function Calculator() {
                 </div>
                 {testDescontoAula && <DivDescontoAula />}
                 {temDescontoAluguel && <DivDescontoVeiculo />}
+                <MilestoneInfo />
             </div>
             <div className='border-t border-gray-200 pt-4'>
                 <Part2 />
