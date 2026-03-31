@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --font-sans: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   --brand-blue: #0619dd;
   --brand-navy: #050f93;
   --brand-yellow: #ffcb00;
@@ -20,7 +21,7 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   color: var(--ink-strong);
   background-color: var(--surface-muted);
   background-image:
@@ -56,15 +57,22 @@ body {
   color: #fff;
 }
 
+.site-shell,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
 .headline-xl,
 .headline-lg,
 .headline-md,
 .display-title {
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 0.96;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
 
 .headline-xl {
@@ -313,7 +321,7 @@ body {
   .headline-md,
   .display-title {
     line-height: 1.03;
-    letter-spacing: 0.01em;
+    letter-spacing: -0.015em;
   }
 
   .md-card,

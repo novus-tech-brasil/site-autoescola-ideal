@@ -267,7 +267,7 @@ export default function Calculator() {
 
     const Part2 = () => (
         <div className='flex flex-col gap-3'>
-            <h1 className='break-words font-["Space_Grotesk"] text-3xl font-bold uppercase leading-tight text-[#050f93] sm:text-4xl md:text-5xl xl:text-6xl'>{formatter.format(valorTotal)}</h1>
+            <h1 className='break-words text-3xl font-bold uppercase leading-tight text-[#050f93] sm:text-4xl md:text-5xl xl:text-6xl'>{formatter.format(valorTotal)}</h1>
             {numeroParcelas > 1 ? <p className='text-pretty text-sm leading-relaxed text-slate-600 md:text-base'>ou <span className='font-bold text-[#0619dd]'>{numeroParcelas}x</span> de <span className='font-bold text-[#0619dd]'>{formatter.format(valorTotal / numeroParcelas)}</span> <span className={valorTotal == valorTotalSemJuros ? 'font-bold text-green-700' : 'text-slate-600'}>{valorTotal == valorTotalSemJuros ? 'âœ“ SEM JUROS' : 'com juros'}</span></p> : <p className='text-sm font-medium text-slate-600 md:text-base'>Pagamento Ã  vista</p>}
             <details className='group mt-6 md:mt-8'>
                 <summary className='flex cursor-pointer items-center justify-between gap-3 rounded-md border border-[#0f172a]/15 bg-slate-50 p-4 text-left text-sm font-semibold uppercase tracking-[0.08em] text-[#0c1327] transition hover:bg-slate-100 md:text-base'>
@@ -365,7 +365,7 @@ export default function Calculator() {
     return (
         <div className='flex w-full flex-col gap-6 rounded-md border border-[#0f172a]/15 bg-white p-5 md:p-8'>
             <div className='relative flex flex-col'>
-                <p className='mb-6 font-["Space_Grotesk"] text-2xl font-bold uppercase text-[#0c1327] md:text-3xl'>{`Escolha seu Plano`}</p>
+            <p className='mb-6 text-2xl font-bold uppercase text-[#0c1327] md:text-3xl'>{`Escolha seu Plano`}</p>
                 <div className='grid grid-cols-1 gap-3 min-[430px]:grid-cols-3 md:flex md:flex-row md:gap-3'>
                     <div key={'carroMoto'} className={tipo === 'carroMoto' ? 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-black bg-[#ffcb00] p-4 text-center text-black transition-all duration-300 md:p-5' : 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-[#0f172a]/20 bg-white p-4 text-center text-[#475569] transition-all duration-300 hover:border-[#0619dd]/50 md:p-5'} onClick={() => setTipo("carroMoto")}>
                         <div className='flex gap-1'>

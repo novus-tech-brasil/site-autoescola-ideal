@@ -38,7 +38,7 @@ export default function ExitIntentModal({
         <div className="mb-4 flex items-start justify-between gap-3">
           <div>
             <p className="text-[0.66rem] font-bold uppercase tracking-[0.12em] text-[#0619dd]">Ultima chance</p>
-            <h3 className="mt-2 text-balance font-['Space_Grotesk'] text-2xl uppercase leading-none text-[#0c1327]">
+            <h3 className="mt-2 text-balance text-2xl uppercase leading-none text-[#0c1327]">
               Nao saia sem falar com a equipe
             </h3>
           </div>

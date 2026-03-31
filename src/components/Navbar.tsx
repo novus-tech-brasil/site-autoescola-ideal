@@ -58,7 +58,7 @@ export default function Navbar() {
               <span className="text-[0.58rem] uppercase tracking-[0.18em] text-white/95 sm:text-[0.67rem]">
                 Autoescola
               </span>
-              <span className="truncate font-['Space_Grotesk'] text-sm leading-none tracking-wide sm:text-lg">
+              <span className="truncate text-sm leading-none tracking-wide sm:text-lg">
                 IDEAL JALES
               </span>
             </div>

@@ -76,7 +76,7 @@ export default function TimedModal({
         <div className="mb-4 flex items-start justify-between gap-3">
           <div>
             <p className="text-[0.66rem] font-bold uppercase tracking-[0.12em] text-[#0619dd]">Atendimento IDEAL</p>
-            <h3 className="mt-2 text-balance font-['Space_Grotesk'] text-2xl uppercase leading-none text-[#0c1327]">
+            <h3 className="mt-2 text-balance text-2xl uppercase leading-none text-[#0c1327]">
               {title}
             </h3>
           </div>
