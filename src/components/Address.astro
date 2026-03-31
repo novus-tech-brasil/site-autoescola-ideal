@@ -1,58 +1,42 @@
 <section
-    class="bg-neutral-900 text-white px-6 py-16 md:px-[15%] grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative"
+    class="material-hero py-12 md:py-20"
     id="endereco"
 >
-    <div class="space-y-6 z-10">
-        <div>
-            <h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">
-                Nos Encontre no <span class="text-[#FFCB00]">Centro de Jales</span>
-            </h1>
-            <div class="h-1 w-16 bg-[#FFCB00] rounded"></div>
+    <div class="section-wrap grid grid-cols-1 gap-4 lg:grid-cols-12 lg:items-stretch">
+        <article class="stagger-in editorial-card col-span-1 bg-[#050f93] p-5 text-white sm:p-6 md:p-9 lg:col-span-5">
+            <p class="eyebrow text-[#ffcb00]">Endereço</p>
+            <h2 class="headline-md mt-4 text-balance text-white">
+                No centro de jales,
+                <span class="text-[#ffcb00]">pronto para te atender</span>
+            </h2>
+
+            <div class="mt-6 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 md:text-base lg:grid-cols-1">
+                <div class="rounded-md border border-white/35 bg-white/16 p-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#ffcb00]">Rua 10, 2264</p>
+                    <p class="text-pretty mt-1 text-white">Centro, Jales - SP</p>
+                </div>
+                <div class="rounded-md border border-white/35 bg-white/16 p-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#ffcb00]">WhatsApp</p>
+                    <a href="https://wa.me/5517997572900" class="mt-1 block text-white hover:text-[#ffcb00]" target="_blank">(17) 99757-2900</a>
+                </div>
+                <div class="rounded-md border border-white/35 bg-white/16 p-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#ffcb00]">Horário</p>
+                    <p class="text-pretty mt-1 text-white">Segunda a Sexta: 7h - 18h</p>
+                </div>
+            </div>
+        </article>
+
+        <div class="stagger-in stagger-delay-2 editorial-card col-span-1 overflow-hidden border-4 border-[#ffcb00] bg-white lg:col-span-7">
+            <iframe
+                class="h-[280px] w-full sm:h-[320px] md:h-full"
+                title="Mapa da Auto Escola Ideal em Jales"
+                aria-label="Mapa da localização da Auto Escola Ideal em Jales"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.6731035845357!2d-50.550305723755855!3d-20.271587401428686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94982fee4ea4794f%3A0x94b9e6b9263f3c6d!2sAuto%20Escola%20Ideal%20%7C%20Em%20Jales%20SP!5e0!3m2!1spt-BR!2sbr!4v1753704911003!5m2!1spt-BR!2sbr"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
         </div>
-
-        <div class="space-y-4">
-            <div class="flex items-start gap-4">
-                <div class="bg-[#FFCB00] p-3 rounded-lg flex-shrink-0">
-                    <span class="material-symbols-outlined text-neutral-900">location_on</span>
-                </div>
-                <div>
-                    <p class="text-sm text-blue-200 font-semibold">ENDEREÇO</p>
-                    <p class="text-lg text-white font-light">Rua 10, 2264, Centro, Jales - SP</p>
-                </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-                <div class="bg-[#FFCB00] p-3 rounded-lg flex-shrink-0">
-                    <span class="material-symbols-outlined text-neutral-900">phone</span>
-                </div>
-                <div>
-                    <p class="text-sm text-blue-200 font-semibold">WHATSAPP</p>
-                    <a href="https://wa.me/5517997572900" class="text-lg text-white font-light hover:text-[#FFCB00] transition" target="_blank">(17) 99757-2900</a>
-                </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-                <div class="bg-[#FFCB00] p-3 rounded-lg flex-shrink-0">
-                    <span class="material-symbols-outlined text-neutral-900">schedule</span>
-                </div>
-                <div>
-                    <p class="text-sm text-blue-200 font-semibold">HORÁRIO</p>
-                    <p class="text-lg text-white font-light">Segunda a Sexta: 7h - 18h</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-full h-64 md:h-full rounded-lg overflow-hidden border-4 border-[#FFCB00] z-10">
-        <iframe
-            class="w-full h-full"
-            title="Mapa da Auto Escola Ideal em Jales"
-            aria-label="Mapa da localização da Auto Escola Ideal em Jales"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.6731035845357!2d-50.550305723755855!3d-20.271587401428686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94982fee4ea4794f%3A0x94b9e6b9263f3c6d!2sAuto%20Escola%20Ideal%20%7C%20Em%20Jales%20SP!5e0!3m2!1spt-BR!2sbr!4v1753704911003!5m2!1spt-BR!2sbr"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
     </div>
 </section>

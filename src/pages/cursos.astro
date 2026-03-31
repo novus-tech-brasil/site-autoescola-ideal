@@ -8,35 +8,41 @@ const courseSchema = generateCoursesListSchema(courses);
 
 <Layout>
   <div>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 md:py-24 lg:py-32">
-      <div class="max-w-6xl mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Nossos Cursos
-        </h1>
-        <p class="text-lg md:text-xl text-blue-100 max-w-2xl">
-          Especializações profissionais em segurança, eficiência e excelência no transporte
-        </p>
+    <section class="material-hero py-14 md:py-18">
+      <div class="section-wrap grid grid-cols-1 gap-4 lg:grid-cols-12">
+        <article class="editorial-card col-span-1 bg-[#050f93] p-5 text-white sm:p-6 md:p-9 lg:col-span-8">
+          <p class="eyebrow text-[#ffcb00]">Cursos Especializantes</p>
+          <h1 class="headline-lg mt-4 text-balance max-w-[16ch] text-white">
+            Formação profissional
+            <span class="text-[#ffcb00]">com certificação</span>
+          </h1>
+          <p class="copy-limit text-pretty mt-4 text-base leading-relaxed text-white/95 md:text-lg">
+            Cursos para motoristas que buscam atualização técnica, segurança e
+            mais oportunidades no mercado.
+          </p>
+        </article>
+        <aside class="editorial-card col-span-1 bg-[#ffcb00] p-5 text-black sm:p-6 md:p-9 lg:col-span-4">
+          <p class="text-xs font-bold uppercase tracking-[0.14em]">Atendimento</p>
+          <p class="mt-3 text-balance font-['Space_Grotesk'] text-2xl uppercase leading-tight">Tire dúvidas e reserve sua vaga pelo WhatsApp.</p>
+        </aside>
       </div>
     </section>
 
-    <!-- Courses Grid -->
-    <section class="py-16 md:py-20 lg:py-24 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="material-surface-strong py-14 md:py-18">
+      <div class="section-wrap">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
             <div 
-              class="bg-white rounded-md shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden hover:scale-105 h-full flex flex-col"
+              class="editorial-card flex h-full flex-col overflow-hidden bg-white"
             >
-              <!-- Course Image -->
-              <div class="relative h-48 md:h-56 bg-gray-200 overflow-hidden">
+              <div class="relative h-48 overflow-hidden border-b border-[#0f172a]/10 bg-slate-200 md:h-56">
                 <img 
                   src={course.img} 
                   alt={course.nome}
                   class="w-full h-full object-cover"
                 />
-                <div class={`absolute top-4 right-4 p-3 rounded-md text-white ${
-                  course.cor === 'primary' ? 'bg-blue-600' : 'bg-amber-500'
+                <div class={`absolute right-4 top-4 rounded-md p-3 text-white ${
+                  course.cor === 'primary' ? 'bg-[#0619dd]' : 'bg-[#ff9500]'
                 }`}>
                   <span class="material-symbols-outlined">
                     {course.icone}
@@ -44,53 +50,49 @@ const courseSchema = generateCoursesListSchema(courses);
                 </div>
               </div>
               
-              <!-- Course Content -->
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+              <div class="flex flex-1 flex-col p-5 sm:p-6">
+                <h3 class="font-['Space_Grotesk'] text-2xl uppercase leading-none text-balance text-[#0c1327]">
                   {course.nome}
                 </h3>
-                <p class="text-sm text-gray-600 mb-4">
+                <p class="mt-2 text-sm text-slate-600">
                   {course.titulo}
                 </p>
-                <p class="text-gray-700 text-sm mb-4 flex-1">
+                <p class="mb-4 mt-4 flex-1 text-pretty text-sm text-slate-700">
                   {course.descricao}
                 </p>
                 
-                <!-- Benefits -->
                 <div class="mb-4 flex-1">
                   {course.beneficios.map((beneficio) => (
-                    <div class="flex items-start gap-2 mb-2">
-                      <span class="material-symbols-outlined text-sm text-green-600 flex-shrink-0 mt-1">
+                    <div class="mb-2 flex items-start gap-2">
+                      <span class="material-symbols-outlined mt-1 shrink-0 text-sm text-[#0619dd]">
                         done
                       </span>
-                      <span class="text-sm text-gray-700">{beneficio}</span>
+                      <span class="text-sm text-slate-700">{beneficio}</span>
                     </div>
                   ))}
                 </div>
 
-                <!-- Pricing -->
-                <div class="bg-gray-50 p-4 rounded-md mb-6">
-                  <p class="text-xs text-gray-500 line-through mb-1">
+                <div class="mb-6 rounded-md border border-[#0f172a]/10 bg-slate-50 p-4">
+                  <p class="mb-1 text-xs text-slate-700 line-through">
                     De {course.precoOriginal}
                   </p>
                   <p class={`text-2xl font-bold mb-1 ${
-                    course.cor === 'primary' ? 'text-blue-600' : 'text-amber-600'
+                    course.cor === 'primary' ? 'text-[#0619dd]' : 'text-[#ff9500]'
                   }`}>
                     {course.preco}
                   </p>
-                  <p class="text-xs text-gray-600">
+                  <p class="text-xs text-slate-600">
                     {course.parcelado}
                   </p>
                 </div>
 
-                <!-- CTA Buttons -->
                 <div class="flex gap-2">
                   <a 
                     href={course.link}
-                    class={`flex-1 text-center py-3 rounded-md font-semibold transition-colors duration-300 ${
+                    class={`flex-1 border border-black px-3 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] transition-colors duration-300 ${
                       course.cor === 'primary' 
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white' 
-                        : 'bg-amber-500 hover:bg-amber-600 text-white'
+                        ? 'bg-[#ffcb00] text-black hover:bg-[#ffd633]' 
+                        : 'bg-[#0619dd] text-white hover:bg-[#050f93]'
                     }`}
                   >
                     Ver Detalhes
@@ -103,24 +105,28 @@ const courseSchema = generateCoursesListSchema(courses);
       </div>
     </section>
 
-    <!-- Doubt CTA Section -->
-    <section class="bg-white py-16 md:py-20 lg:py-24 border-t-4 border-blue-600">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Não Sabe Qual Curso Escolher?
-        </h2>
-        <p class="text-lg text-gray-700 mb-8">
-          Fale conosco! Nossos especialistas estão prontos para ajudá-lo a escolher o curso ideal para sua carreira.
-        </p>
-        <a
-          href="https://wa.me/18999999999?text=Olá! Gostaria de saber mais sobre os cursos da Autoescola Ideal."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-md font-semibold transition-colors duration-300"
-        >
-          <span class="material-symbols-outlined">chat</span>
-          Fale Conosco no WhatsApp
-        </a>
+    <section class="material-surface py-14 md:py-16">
+      <div class="section-wrap">
+        <div class="editorial-card bg-[#ffcb00] p-8 text-center text-black md:p-10">
+          <h2 class="font-['Space_Grotesk'] text-3xl uppercase leading-none md:text-4xl">
+            Não sabe qual curso escolher?
+          </h2>
+          <p class="copy-limit text-pretty mx-auto mt-4 text-base leading-relaxed text-black md:text-lg">
+            Fale com nossa equipe e receba orientação para selecionar o curso
+            certo para seu perfil profissional.
+          </p>
+          <a
+            href="https://wa.me/5517997572900?text=Olá! Gostaria de saber mais sobre os cursos da Autoescola Ideal."
+            data-lead-action="open-modal"
+            data-lead-source="cursos-help-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex w-full items-center justify-center gap-2 border border-black bg-black px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.09em] text-white transition hover:bg-[#1f2937] sm:w-auto"
+          >
+            <span class="material-symbols-outlined">chat</span>
+            Fale no WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   </div>

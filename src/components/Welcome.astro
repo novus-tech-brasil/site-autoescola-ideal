@@ -1,79 +1,66 @@
-<section
-    id="inicio"
-    class="flex flex-col h-fit md:min-h-screen w-full relative bg-[#071CF8] pt-20 max-h-screen"
->
-    <div
-        class="grid grid-cols-1 lg:grid-cols-5 gap-8 pb-0 bg-[#071CF8] text-white h-fit w-full px-13 lg:px-22 pt-12 relative z-10"
-    >
-        <!-- Conteúdo principal -->
-        <div class="flex flex-col w-full items-center lg:items-start col-span-2 gap-6 z-10">
-            <!-- Texto grande responsivo -->
-            <div class="flex flex-col gap-0">
-                <h3
-                    class="text-lg md:text-xl font-medium text-gray-200 tracking-wide"
-                >
-                    A autoescola
-                </h3>
-                <h1
-                    class="text-7xl md:text-8xl font-black text-[#FFCB00] leading-none"
-                >
-                    IDEAL
-                </h1>
-                <h2 class="text-2xl md:text-3xl font-light text-gray-200 mt-2">
-                    para você!
-                </h2>
-            </div>
+<section id="inicio" class="material-hero pb-12 pt-8 md:pb-20 md:pt-14">
+    <div class="section-wrap grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-10">
+        <article class="stagger-in col-span-1 flex flex-col gap-5 lg:col-span-8 lg:gap-7">
+            <p class="eyebrow text-[#ffcb00]">Autoescola em Jales</p>
 
-            <!-- Descrição -->
-            <p
-                class="text-justify text-gray-200 text-base md:text-lg leading-relaxed max-w-md font-light"
-            >
-                A Autoescola de Jales-SP que ensina você a dirigir com
-                segurança, confiança e estilo, transformando cada aula em um
-                passo rumo à liberdade e autonomia.
+            <h1 class="headline-xl text-balance max-w-[12ch] text-white sm:max-w-[14ch]">
+                Dirigir com
+                <span class="text-[#ffcb00]">confiança</span>
+                começa na IDEAL
+            </h1>
+
+            <p class="copy-limit text-pretty text-sm leading-relaxed text-white/95 sm:text-base md:text-lg">
+                Formação completa, atendimento rápido e instrutores experientes
+                para você conquistar sua CNH sem enrolação.
             </p>
 
-            <!-- CTA Button -->
-            <a
-                href="https://wa.me/5517997572900"
-                class="inline-flex items-center gap-3 px-8 py-3 rounded-lg w-full max-w-[300px] bg-[#FFCB00] text-[#071CF8] font-semibold hover:bg-[#E6B800] transition-colors duration-300"
-                role="button"
-                target="_blank"
-                aria-label="Começar processo de matrícula agora"
-            >
-                Começar agora
-                <span class="material-symbols-outlined" aria-hidden="true"
-                    >arrow_forward</span
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                    href="https://wa.me/5517997572900"
+                    data-lead-action="open-modal"
+                    data-lead-source="hero-cta"
+                    class="cta-primary inline-flex w-full items-center justify-center gap-2 px-6 py-3 text-sm uppercase tracking-[0.09em] sm:w-auto md:text-base"
+                    role="button"
+                    target="_blank"
+                    aria-label="Iniciar matrícula no WhatsApp"
                 >
-            </a>
+                    Garantir Minha Vaga Agora
+                    <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                </a>
 
-            <!-- Informações adicionais -->
-            <div
-                class="text-sm md:text-base font-medium text-[#FFCB00] border-l-4 border-[#FFCB00] pl-4 py-3 px-4"
-            >
-                <span class="block">Trabalhamos com:</span>
-                <span class="font-semibold"
-                    >Carro (B) • Moto (A) • Ônibus (D) • Carreta (E)</span
+                <a
+                    href="/planos"
+                    class="cta-secondary inline-flex w-full items-center justify-center gap-2 px-6 py-3 text-sm uppercase tracking-[0.09em] sm:w-auto md:text-base"
                 >
+                    Simular Plano
+                    <span class="material-symbols-outlined" aria-hidden="true">calculate</span>
+                </a>
             </div>
-        </div>
 
-        <div></div>
-    </div>
-    <div
-        class="w-full h-full justify-end items-end col-span-3 z-10 absolute right-0 -bottom-30 2xl:-bottom-20 hidden lg:flex pointer-events-none"
-    >
-        <div class="flex h-full">
+            <div class="grid grid-cols-1 gap-3 text-sm text-white/95 sm:grid-cols-2 md:text-base lg:grid-cols-3">
+                <p class="editorial-stamp text-pretty">Processo guiado do início ao exame.</p>
+                <p class="editorial-stamp text-pretty">Carro, moto e mudança de categoria.</p>
+                <p class="editorial-stamp text-pretty">Atendimento direto no WhatsApp.</p>
+            </div>
+        </article>
+
+        <aside class="stagger-in stagger-delay-2 col-span-1 grid gap-4 lg:col-span-4">
+            <div class="editorial-card border-none bg-[#0619dd] p-5 text-white md:p-6">
+                <p class="eyebrow text-[#ffcb00]">Categorias</p>
+                <p class="mt-3 font-['Space_Grotesk'] text-[1.75rem] uppercase leading-[1.02] sm:text-3xl">A | B | D | E</p>
+                <p class="mt-2 text-pretty text-sm text-white/95">Primeira habilitação e mudança de categoria para atuação profissional.</p>
+            </div>
+
+            <div class="editorial-card border-none bg-[#ffcb00] p-5 text-black md:p-6">
+                <p class="text-xs font-bold uppercase tracking-[0.14em]">Matrícula Ágil</p>
+                <p class="mt-2 text-balance text-xl font-['Space_Grotesk'] uppercase leading-none sm:text-2xl">Atendimento em poucos minutos</p>
+            </div>
+
             <img
                 src="/img-inicio.png"
-                alt="Aluna da Autoescola Ideal sorrindo"
-                class="w-full h-full max-h-[78vh] object-contain object-bottom"
+                alt="Aluna da Autoescola Ideal"
+                class="h-56 w-full rounded-xl border border-white/15 object-cover object-top sm:h-64"
             />
-        </div>
-    </div>
-    <div
-        class="absolute -bottom-15 left-0 w-full h-auto pointer-events-none z-20 hidden lg:block"
-    >
-        <img src="/wave.svg" alt="" aria-hidden="true" class="" />
+        </aside>
     </div>
 </section>

@@ -4,34 +4,24 @@ import Calculator from "../components/calculator";
 ---
 
 <Layout>
-    <section id="calculadora" class="w-full py-20 bg-neutral-50">
-        <div
-            class="corpo mx-auto justify-center items-center flex flex-col mt-10 md:mt-20"
-        >
-            <div class="text-center mb-12 px-8">
-                <p
-                    class="text-primary font-semibold uppercase tracking-wider mb-2"
-                >
-                    Simulador de Preços
+    <section id="calculadora" class="material-surface-strong py-14 md:py-20">
+        <div class="section-wrap grid grid-cols-1 gap-4 lg:grid-cols-12">
+            <header class="stagger-in editorial-card col-span-1 bg-[#050f93] p-5 text-white sm:p-6 md:p-8 lg:col-span-4">
+                <p class="eyebrow text-[#ffcb00]">Simulador de Preços</p>
+                <h1 class="headline-md mt-4 text-balance text-white">
+                    Monte seu
+                    <span class="text-[#ffcb00]">plano ideal</span>
+                </h1>
+                <p class="text-pretty mt-4 text-sm leading-relaxed text-white/95 md:text-base">
+                    Ajuste tipo de habilitação, aulas e parcelas para visualizar
+                    o valor estimado em tempo real.
                 </p>
-                <h2 class="text-4xl md:text-5xl font-bold text-neutral-800">
-                    Monte seu plano ideal
-                </h2>
-                <p class="text-neutral-500 mt-4 max-w-2xl mx-auto">
-                    Use nossa calculadora interativa para descobrir o melhor
-                    pacote para você.
+                <p class="mt-6 rounded-md border border-[#ffcb00]/55 bg-[#030b6f] px-4 py-3 text-xs uppercase tracking-[0.1em] text-white md:text-sm">
+                    Arraste os controles e simule em segundos
                 </p>
-                <div
-                    class="flex w-full px-10 gap-5 py-5 bg-green-600 rounded-md mt-4 animate-pulse justify-between text-white"
-                >
-                    <p>Arraste para baixo e monte o seu plano!</p>
-                    <span class="material-symbols-outlined">
-                        arrow_cool_down
-                    </span>
-                </div>
-            </div>
+            </header>
 
-            <div class="p-5 w-full max-w-[1100px] flex flex-col">
+            <div class="stagger-in stagger-delay-1 editorial-card col-span-1 bg-white p-3 sm:p-4 md:p-6 lg:col-span-8">
                 <Calculator client:load />
             </div>
         </div>

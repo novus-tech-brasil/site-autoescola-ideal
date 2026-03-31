@@ -73,9 +73,6 @@ export default function Calculator() {
     }
 
     function calcularValorComJuros(valor: number, parcelas: number) {
-        // const TAXA_BASE = 0.0351;        // 3,51%
-        // const JUROS_MENSAL = 0.018;      // 1,8%
-
         return taxas[parcelas] ? valor * (1 + taxas[parcelas] / 100) : valor;
     }
 
@@ -91,16 +88,18 @@ export default function Calculator() {
         }
 
         return (
-            <div className='flex flex-col gap-2 mt-3'>
+            <div className='mt-4 flex flex-col gap-3'>
                 {
                     tiposInput.map((t) => (
-                        <div className='flex flex-col gap-2 mt-4' key={t}>
-                            <div className='flex gap-2 items-center justify-between bg-gray-50 p-3 md:p-4 px-4 rounded-lg border border-gray-200'>
-                                <h1 className='text-sm md:text-base text-gray-900 font-medium'>Aulas de {t === 'carro' ? 'Carro' : 'Moto'}: <span className='font-bold text-[#071CF8]'>{t == 'carro' ? numAulasCarro : numAulasMoto}</span></h1>
+                        <div className='flex flex-col gap-2' key={t}>
+                            <div className='flex flex-col items-start gap-3 rounded-md border border-[#0f172a]/15 bg-white p-3 min-[460px]:flex-row min-[460px]:items-center min-[460px]:justify-between md:p-4'>
+                                <h1 className='text-pretty text-sm font-semibold uppercase tracking-[0.08em] text-[#0c1327] md:text-base'>
+                                    Aulas de {t === 'carro' ? 'Carro' : 'Moto'}: <span className='text-[#0619dd]'>{t == 'carro' ? numAulasCarro : numAulasMoto}</span>
+                                </h1>
 
                                 <div className='flex gap-2'>
-                                    <button className='border-2 border-gray-300 bg-white hover:bg-gray-50 hover:border-[#071CF8] p-2 rounded-lg w-10 h-10 flex items-center justify-center text-gray-800 cursor-pointer transition-all duration-200 font-semibold' onClick={() => alterarAulas(t, t == 'carro' ? numAulasCarro - 1 : numAulasMoto - 1)}>−</button>
-                                    <button className='border-2 border-gray-300 bg-white hover:bg-gray-50 hover:border-[#071CF8] p-2 rounded-lg w-10 h-10 flex items-center justify-center text-gray-800 cursor-pointer transition-all duration-200 font-semibold' onClick={() => alterarAulas(t, t == 'carro' ? numAulasCarro + 1 : numAulasMoto + 1)}>+</button>
+                                    <button className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-black bg-[#ffcb00] p-2 text-xl font-bold text-black transition hover:bg-[#ffd633]' onClick={() => alterarAulas(t, t == 'carro' ? numAulasCarro - 1 : numAulasMoto - 1)}>âˆ’</button>
+                                    <button className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-black bg-[#ffcb00] p-2 text-xl font-bold text-black transition hover:bg-[#ffd633]' onClick={() => alterarAulas(t, t == 'carro' ? numAulasCarro + 1 : numAulasMoto + 1)}>+</button>
                                 </div>
 
                             </div>
@@ -162,16 +161,16 @@ export default function Calculator() {
 
     const DivDescontoAula = () => {
         return (
-            <div className="relative flex mt-4 md:mt-5 overflow-hidden rounded-lg border border-[#FFCB00]/30 bg-[#FFCB00]/5 p-4 md:p-5 shadow-sm min-h-20 justify-start items-center">
+            <div className="relative mt-4 flex min-h-20 items-center justify-start overflow-hidden rounded-md border border-[#ffcb00]/35 bg-[#ffcb00]/15 p-4 md:mt-5 md:p-5">
                 <div className="relative z-10 flex items-center gap-4">
-                    <span className="material-symbols-outlined text-[#FFCB00] text-5xl flex-shrink-0">
+                    <span className="material-symbols-outlined text-4xl text-[#9a6b00] flex-shrink-0 md:text-5xl">
                         local_offer
                     </span>
                     <div className="flex flex-col">
-                        <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-700">
+                        <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#5f4800] md:text-sm">
                             Desconto Aplicado nas aulas
                         </span>
-                        <span className="text-lg md:text-xl text-gray-900 font-bold mt-1">
+                        <span className="mt-1 text-lg font-bold text-black md:text-xl">
                             {descontoAula.toFixed(0)}% de desconto
                         </span>
                     </div>
@@ -182,16 +181,16 @@ export default function Calculator() {
 
     const DivDescontoVeiculo = () => {
         return (
-            <div className="relative mt-4 md:mt-5 flex overflow-hidden rounded-lg border border-[#071CF8]/30 bg-[#071CF8]/5 p-4 md:p-5 shadow-sm min-h-20 justify-start items-center">
+            <div className="relative mt-4 flex min-h-20 items-center justify-start overflow-hidden rounded-md border border-[#0619dd]/30 bg-[#0619dd]/8 p-4 md:mt-5 md:p-5">
                 <div className="relative z-10 flex items-center gap-4">
-                    <span className="material-symbols-outlined text-[#071CF8] text-5xl flex-shrink-0">
+                    <span className="material-symbols-outlined text-[#0619dd] text-4xl flex-shrink-0 md:text-5xl">
                         directions_car
                     </span>
                     <div className="flex flex-col">
-                        <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-700">
-                            Desconto Aplicado no aluguel do(s) veículo(s)
+                        <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#243b83] md:text-sm">
+                            Desconto Aplicado no aluguel do(s) veÃ­culo(s)
                         </span>
-                        <span className="text-lg md:text-xl text-gray-900 font-bold mt-1">
+                        <span className="mt-1 text-lg font-bold text-[#0c1327] md:text-xl">
                             {descontoAluguel.toFixed(0)}% de desconto
                         </span>
                     </div>
@@ -202,14 +201,14 @@ export default function Calculator() {
 
     const Detalhes = () => {
         return (
-            <div className='bg-gray-50 p-4 md:p-5 rounded-lg border border-gray-200 w-full h-full'>
-                <h2 className='text-base md:text-lg font-bold mb-4 text-gray-900'>O que está incluído:</h2>
-                <ul className='flex flex-col list-disc list-inside text-sm md:text-base text-gray-700 space-y-2'>
+            <div className='h-full w-full rounded-md border border-[#0f172a]/15 bg-white p-4 md:p-5'>
+                <h2 className='mb-4 text-base font-bold uppercase tracking-[0.08em] text-[#0c1327] md:text-lg'>O que estÃ¡ incluÃ­do:</h2>
+                <ul className='flex list-disc flex-col space-y-2 list-inside text-sm text-slate-700 md:text-base'>
                     {tipo.toLocaleLowerCase().includes("carro") && <li>{numAulasCarro} x Aulas de Carro</li>}
                     {tipo.toLocaleLowerCase().includes("moto") && <li>{numAulasMoto} x Aulas de Moto</li>}
-                    <li>Veículo incluso no exame prático</li>
-                    <li>Agendamento feito por nós</li>
-                    {aulasTotaisSoma >= 6 && <li>Base Teórica para Aprendizado Eficiente</li>}
+                    <li>VeÃ­culo incluso no exame prÃ¡tico</li>
+                    <li>Agendamento feito por nÃ³s</li>
+                    {aulasTotaisSoma >= 6 && <li>Base TeÃ³rica para Aprendizado Eficiente</li>}
                     {aulasTotaisSoma >= 8 && <>
                         <li>Processo 100% personalizado</li>
                         <li>Monitoramento de aprendizagem ESPECIAL</li>
@@ -228,25 +227,39 @@ export default function Calculator() {
     }
 
     const enviarMensagem = () => {
-        const mensagem = `Olá, gostaria de iniciar meu processo para tirar a CNH com o seguinte plano:%0A%0A` +
+        if (typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent('ideal-conversion-event', {
+                detail: {
+                    event: 'calculator_submit',
+                    source: 'planos-simulator',
+                    tipo,
+                    parcelas: numeroParcelas,
+                    aulasCarro: numAulasCarro,
+                    aulasMoto: numAulasMoto,
+                    valorTotal,
+                },
+            }));
+        }
+
+        const mensagem = `OlÃ¡, gostaria de iniciar meu processo para tirar a CNH com o seguinte plano:%0A%0A` +
             `Tipo: ${tipo === 'carroMoto' ? 'Carro e Moto' : tipo === 'carro' ? 'Apenas Carro' : 'Apenas Moto'}%0A` +
-            `Número de aulas de ${tipo === 'carroMoto' ? `carro: ${numAulasCarro}%0ANúmero de aulas de moto: ${numAulasMoto}%0A` : (tipo === 'carro' ? `carro: ${numAulasCarro}%0A` : `moto: ${numAulasMoto}%0A`)}` +
-            `Número de parcelas: ${numeroParcelas}%0A` +
+            `NÃºmero de aulas de ${tipo === 'carroMoto' ? `carro: ${numAulasCarro}%0ANÃºmero de aulas de moto: ${numAulasMoto}%0A` : (tipo === 'carro' ? `carro: ${numAulasCarro}%0A` : `moto: ${numAulasMoto}%0A`)}` +
+            `NÃºmero de parcelas: ${numeroParcelas}%0A` +
             `Valor Aproximado ${formatter.format(valorTotal)}%0A` +
             `${numeroParcelas > numeroParcelasSemJuros ? 'Com juros da maquininha inclusos!%0A%0A' : 'SEM JUROS%0A%0A'}` +
-            `Por favor, me envie mais informações sobre como proceder. Obrigado!`;
+            `Por favor, me envie mais informaÃ§Ãµes sobre como proceder. Obrigado!`;
         window.open(`https://wa.me/5517997572900?text=${mensagem}`, '_blank');
     }
 
     const Buttons = () => {
         return (
             <div className='grid grid-cols-1 md:grid-cols-3 gap-3 mt-6'>
-                <button className='border border-gray-300 bg-gray-50 hover:bg-gray-100 transition-all duration-300 py-3 md:py-4 px-4 text-gray-800 text-sm md:text-base font-semibold w-full rounded-lg cursor-pointer hover:border-gray-400' onClick={() => reset()}>
+                <button className='w-full cursor-pointer rounded-md border border-[#0f172a]/30 bg-white px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[#0c1327] transition hover:bg-slate-100 md:py-4 md:text-base' onClick={() => reset()}>
                     Reiniciar
                 </button>
-                <button className='bg-[#071CF8] border border-[#071CF8] hover:bg-[#041092] transition-all duration-300 py-3 md:py-4 px-4 text-white font-semibold w-full rounded-lg cursor-pointer md:col-span-2 flex flex-col items-center justify-center gap-1' onClick={() => enviarMensagem()}>
+                <button className='md:col-span-2 flex w-full cursor-pointer flex-col items-center justify-center gap-1 rounded-md border border-black bg-[#ffcb00] px-4 py-3 text-black transition hover:bg-[#ffd633] md:py-4' onClick={() => enviarMensagem()}>
                     <span>Quero Iniciar Agora!</span>
-                    <p className='text-xs text-white/80'>Leva menos de 2 minutos</p>
+                    <p className='text-xs text-black/90'>Leva menos de 2 minutos</p>
                 </button>
             </div>
         )
@@ -254,41 +267,41 @@ export default function Calculator() {
 
     const Part2 = () => (
         <div className='flex flex-col gap-3'>
-            <h1 className='text-4xl md:text-5xl xl:text-6xl font-bold text-gray-900'>{formatter.format(valorTotal)}</h1>
-            {numeroParcelas > 1 ? <p className='text-sm md:text-base text-gray-600 leading-relaxed'>ou <span className='font-bold text-[#071CF8]'>{numeroParcelas}x</span> de <span className='font-bold text-[#071CF8]'>{formatter.format(valorTotal / numeroParcelas)}</span> <span className={valorTotal == valorTotalSemJuros ? 'font-bold text-green-600' : 'text-gray-600'}>{valorTotal == valorTotalSemJuros ? '✓ SEM JUROS' : 'com juros'}</span></p> : <p className='text-sm md:text-base text-gray-600 font-medium'>Pagamento à vista</p>}
-            <details className='mt-6 md:mt-8 group'>
-                <summary className='cursor-pointer text-sm md:text-base text-gray-900 font-semibold flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all'>
-                    <div className='flex gap-3 items-center'>
+            <h1 className='break-words font-["Space_Grotesk"] text-3xl font-bold uppercase leading-tight text-[#050f93] sm:text-4xl md:text-5xl xl:text-6xl'>{formatter.format(valorTotal)}</h1>
+            {numeroParcelas > 1 ? <p className='text-pretty text-sm leading-relaxed text-slate-600 md:text-base'>ou <span className='font-bold text-[#0619dd]'>{numeroParcelas}x</span> de <span className='font-bold text-[#0619dd]'>{formatter.format(valorTotal / numeroParcelas)}</span> <span className={valorTotal == valorTotalSemJuros ? 'font-bold text-green-700' : 'text-slate-600'}>{valorTotal == valorTotalSemJuros ? 'âœ“ SEM JUROS' : 'com juros'}</span></p> : <p className='text-sm font-medium text-slate-600 md:text-base'>Pagamento Ã  vista</p>}
+            <details className='group mt-6 md:mt-8'>
+                <summary className='flex cursor-pointer items-center justify-between gap-3 rounded-md border border-[#0f172a]/15 bg-slate-50 p-4 text-left text-sm font-semibold uppercase tracking-[0.08em] text-[#0c1327] transition hover:bg-slate-100 md:text-base'>
+                    <div className='flex flex-1 gap-3 items-center'>
                         <span className="material-symbols-outlined group-open:rotate-90 transition-transform">
                             chevron_right
                         </span>
-                        Como é calculado o valor?
+                        Como Ã© calculado o valor?
                     </div>
                 </summary>
-                <div className='border-l-4 border-[#071CF8] p-4 md:p-5 bg-gray-50'>
-                    <h3 className='text-xs md:text-sm font-bold text-gray-700 mb-1'>Valor por aula:</h3>
-                    <h1 className='text-2xl md:text-3xl font-bold text-[#071CF8] mb-4'>{formatter.format(valorPorAula)}</h1>
-                    <h3 className='text-xs md:text-sm font-bold text-gray-700 mb-1'>Aluguel do(s) veículo(s):</h3>
-                    <h1 className='text-2xl md:text-3xl font-bold text-[#071CF8]'>{valorAluguel > 0 ? formatter.format(valorAluguel) : '✓ Grátis!'}
-                        <p className='text-xs text-gray-500'>* O aluguel é incluso no valor do plano!</p>
-                        <p className="text-xs text-gray-500">
-                            * O valor do aluguel incluído neste pacote é válido apenas para o primeiro exame de cada categoria. Em caso de reprovação, será necessário efetuar um novo pagamento do aluguel.
+                <div className='border-l-4 border-[#0619dd] bg-slate-50 p-4 md:p-5'>
+                    <h3 className='mb-1 text-xs font-bold uppercase tracking-[0.08em] text-slate-600 md:text-sm'>Valor por aula:</h3>
+                    <h1 className='mb-4 text-2xl font-bold text-[#0619dd] md:text-3xl'>{formatter.format(valorPorAula)}</h1>
+                    <h3 className='mb-1 text-xs font-bold uppercase tracking-[0.08em] text-slate-600 md:text-sm'>Aluguel do(s) veÃ­culo(s):</h3>
+                    <h1 className='text-2xl font-bold text-[#0619dd] md:text-3xl'>{valorAluguel > 0 ? formatter.format(valorAluguel) : 'âœ“ GrÃ¡tis!'}
+                        <p className='text-xs text-slate-700'>* O aluguel Ã© incluso no valor do plano!</p>
+                        <p className="text-xs text-slate-700">
+                            * O valor do aluguel incluÃ­do neste pacote Ã© vÃ¡lido apenas para o primeiro exame de cada categoria. Em caso de reprovaÃ§Ã£o, serÃ¡ necessÃ¡rio efetuar um novo pagamento do aluguel.
                         </p>
                     </h1>
                 </div>
             </details>
-            <details className='mt-4 md:mt-6 group'>
-                <summary className='cursor-pointer text-sm md:text-base text-gray-900 font-semibold flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all'>
-                    <div className='flex gap-3 items-center'>
+            <details className='group mt-4 md:mt-6'>
+                <summary className='flex cursor-pointer items-center justify-between gap-3 rounded-md border border-[#0f172a]/15 bg-slate-50 p-4 text-left text-sm font-semibold uppercase tracking-[0.08em] text-[#0c1327] transition hover:bg-slate-100 md:text-base'>
+                    <div className='flex flex-1 gap-3 items-center'>
                         <span className="material-symbols-outlined group-open:rotate-90 transition-transform">
                             chevron_right
                         </span>
-                        O que está incluso?
+                        O que estÃ¡ incluso?
                     </div>
                 </summary>
-                <div className='border-l-4 border-[#071CF8] p-4 md:p-5 bg-gray-50'>
+                <div className='border-l-4 border-[#0619dd] bg-slate-50 p-4 md:p-5'>
                     <Detalhes />
-                    <p className='text-xs md:text-sm text-gray-500 mt-4'>* Os valores não incluem taxas e exames adicionais do Detran.</p>
+                    <p className='mt-4 text-xs text-slate-700 md:text-sm'>* Os valores nÃ£o incluem taxas e exames adicionais do Detran.</p>
                 </div>
             </details>
 
@@ -312,7 +325,7 @@ export default function Calculator() {
         if (aulasTotaisSoma < 4) {
             proximoMilestone = '39% de desconto';
             aulasProximas = 4 - aulasTotaisSoma;
-            mensagem = `Faltam apenas ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para você ganhar ${proximoMilestone}!`;
+            mensagem = `Faltam apenas ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para vocÃª ganhar ${proximoMilestone}!`;
         } else if (aulasTotaisSoma >= 4 && aulasTotaisSoma < 10) {
             proximoMilestone = '45% de desconto';
             aulasProximas = 10 - aulasTotaisSoma;
@@ -322,24 +335,24 @@ export default function Calculator() {
             aulasProximas = 15 - aulasTotaisSoma;
             mensagem = `Faltam ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para desbloqueiar ${proximoMilestone}!`;
         } else if (aulasTotaisSoma >= 15 && aulasTotaisSoma < 20) {
-            proximoMilestone = '51% de desconto (+ aluguel grátis)';
+            proximoMilestone = '51% de desconto (+ aluguel grÃ¡tis)';
             aulasProximas = 20 - aulasTotaisSoma;
             mensagem = `Faltam ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para desbloqueiar ${proximoMilestone}!`;
         } else if (aulasTotaisSoma >= 20) {
-            mensagem = '✓ Você desbloqueou o melhor desconto! 51% de desconto + Aluguel Grátis!';
+            mensagem = 'âœ“ VocÃª desbloqueou o melhor desconto! 51% de desconto + Aluguel GrÃ¡tis!';
         }
 
         return (
-            <div className="relative mt-4 md:mt-5 flex overflow-hidden rounded-lg border border-green-500/30 bg-green-500/5 p-4 md:p-5 shadow-sm min-h-20 justify-start items-center">
+            <div className="relative mt-4 flex min-h-20 items-center justify-start overflow-hidden rounded-md border border-green-700/30 bg-green-600/6 p-4 md:mt-5 md:p-5">
                 <div className="relative z-10 flex items-center gap-4">
                     <span className="material-symbols-outlined text-green-600 text-5xl flex-shrink-0">
                         trending_up
                     </span>
                     <div className="flex flex-col">
-                        <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-700">
-                            Próximo Milestone
+                        <span className="text-xs font-bold uppercase tracking-[0.14em] text-green-800 md:text-sm">
+                            PrÃ³ximo Milestone
                         </span>
-                        <span className="text-sm md:text-base text-gray-900 font-semibold mt-1">
+                        <span className="text-pretty mt-1 text-sm font-semibold text-slate-900 md:text-base">
                             {mensagem}
                         </span>
                     </div>
@@ -350,11 +363,11 @@ export default function Calculator() {
 
 
     return (
-        <div className='w-full bg-white p-5 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-6 transition-all duration-300'>
-            <div className='flex flex-col relative'>
-                <p className='text-2xl md:text-3xl font-bold text-gray-900 mb-6'>{`Escolha seu Plano`}</p>
-                <div className='grid grid-cols-3 gap-3 md:flex md:flex-row md:gap-3'>
-                    <div key={'carroMoto'} className={tipo === 'carroMoto' ? 'bg-[#071CF8] p-4 md:p-5 rounded-lg justify-center items-center flex flex-col gap-2 w-full text-white cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md' : 'bg-gray-50 p-4 md:p-5 rounded-lg justify-center items-center border-2 border-gray-200 flex flex-col gap-2 w-full text-gray-700 cursor-pointer hover:border-gray-300 hover:bg-gray-100 transition-all duration-300'} onClick={() => setTipo("carroMoto")}>
+        <div className='flex w-full flex-col gap-6 rounded-md border border-[#0f172a]/15 bg-white p-5 md:p-8'>
+            <div className='relative flex flex-col'>
+                <p className='mb-6 font-["Space_Grotesk"] text-2xl font-bold uppercase text-[#0c1327] md:text-3xl'>{`Escolha seu Plano`}</p>
+                <div className='grid grid-cols-1 gap-3 min-[430px]:grid-cols-3 md:flex md:flex-row md:gap-3'>
+                    <div key={'carroMoto'} className={tipo === 'carroMoto' ? 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-black bg-[#ffcb00] p-4 text-center text-black transition-all duration-300 md:p-5' : 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-[#0f172a]/20 bg-white p-4 text-center text-[#475569] transition-all duration-300 hover:border-[#0619dd]/50 md:p-5'} onClick={() => setTipo("carroMoto")}>
                         <div className='flex gap-1'>
                             <span className="material-symbols-outlined text-2xl md:text-3xl">
                                 directions_car
@@ -364,34 +377,34 @@ export default function Calculator() {
                             </span>
                         </div>
                         <input type='radio' name="drone" value={'carroMoto'} className='hidden' readOnly id="carroMoto" checked={tipo === 'carroMoto'} />
-                        <label htmlFor='carroMoto' className={tipo === 'carroMoto' ? 'text-sm md:text-base font-semibold text-white' : 'text-sm md:text-base font-semibold text-gray-700'}>Ambos</label>
+                        <label htmlFor='carroMoto' className={tipo === 'carroMoto' ? 'text-xs font-semibold uppercase tracking-[0.08em] text-black min-[430px]:text-sm md:text-base' : 'text-xs font-semibold uppercase tracking-[0.08em] text-[#475569] min-[430px]:text-sm md:text-base'}>Ambos</label>
                     </div>
-                    <div key={'moto'} className={tipo === 'moto' ? 'bg-[#071CF8] p-4 md:p-5 rounded-lg justify-center items-center flex flex-col gap-2 w-full text-white cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md' : 'bg-gray-50 p-4 md:p-5 rounded-lg justify-center items-center border-2 border-gray-200 flex flex-col gap-2 w-full text-gray-700 cursor-pointer hover:border-gray-300 hover:bg-gray-100 transition-all duration-300'} onClick={() => setTipo("moto")}>
+                    <div key={'moto'} className={tipo === 'moto' ? 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-black bg-[#ffcb00] p-4 text-center text-black transition-all duration-300 md:p-5' : 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-[#0f172a]/20 bg-white p-4 text-center text-[#475569] transition-all duration-300 hover:border-[#0619dd]/50 md:p-5'} onClick={() => setTipo("moto")}>
                         <span className="material-symbols-outlined text-2xl md:text-3xl">
                             two_wheeler
                         </span>
                         <input readOnly type='radio' name="drone" value={'moto'} id="moto" checked={tipo === 'moto'} className='hidden' />
-                        <label htmlFor='moto' className={tipo === 'moto' ? 'text-sm md:text-base font-semibold text-white' : 'text-sm md:text-base font-semibold text-gray-700'}>Moto</label>
+                        <label htmlFor='moto' className={tipo === 'moto' ? 'text-xs font-semibold uppercase tracking-[0.08em] text-black min-[430px]:text-sm md:text-base' : 'text-xs font-semibold uppercase tracking-[0.08em] text-[#475569] min-[430px]:text-sm md:text-base'}>Moto</label>
                     </div>
-                    <div key={'carro'} className={tipo === 'carro' ? 'bg-[#071CF8] p-4 md:p-5 rounded-lg justify-center items-center flex flex-col gap-2 w-full text-white cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md' : 'bg-gray-50 p-4 md:p-5 rounded-lg justify-center items-center border-2 border-gray-200 flex flex-col gap-2 w-full text-gray-700 cursor-pointer hover:border-gray-300 hover:bg-gray-100 transition-all duration-300'} onClick={() => setTipo("carro")}>
+                    <div key={'carro'} className={tipo === 'carro' ? 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-black bg-[#ffcb00] p-4 text-center text-black transition-all duration-300 md:p-5' : 'flex min-h-[92px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-[#0f172a]/20 bg-white p-4 text-center text-[#475569] transition-all duration-300 hover:border-[#0619dd]/50 md:p-5'} onClick={() => setTipo("carro")}>
                         <span className="material-symbols-outlined text-2xl md:text-3xl">
                             directions_car
                         </span>
                         <input readOnly type='radio' name="drone" value={'carro'} className='hidden' id="carro" checked={tipo === 'carro'} />
-                        <label htmlFor='carro' className={tipo === 'carro' ? 'text-sm md:text-base font-semibold text-white' : 'text-sm md:text-base font-semibold text-gray-700'}>Carro</label>
+                        <label htmlFor='carro' className={tipo === 'carro' ? 'text-xs font-semibold uppercase tracking-[0.08em] text-black min-[430px]:text-sm md:text-base' : 'text-xs font-semibold uppercase tracking-[0.08em] text-[#475569] min-[430px]:text-sm md:text-base'}>Carro</label>
                     </div>
                 </div>
                 <RenderInputs />
-                <div className='mt-4 md:mt-6 gap-3 flex flex-col'>
-                    <label htmlFor='numeroParcelas' className='text-base md:text-lg font-bold text-gray-900'>Parcelas: <span className='text-[#071CF8] font-bold'>{numeroParcelas}x</span></label>
-                    <input type="range" name="numeroParcelas" value={numeroParcelas} min={1} max={numeroParcelasMaximo} onChange={(e) => setNumeroParcelas(Number(e.target.value))} className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#071CF8]' style={{ accentColor: '#071CF8' }} />
-                    <p className='text-xs md:text-sm font-medium text-gray-500'>Até {numeroParcelasSemJuros}x <span className='text-[#071CF8] font-bold'>SEM JUROS</span></p>
+                <div className='mt-4 flex flex-col gap-3 md:mt-6'>
+                    <label htmlFor='numeroParcelas' className='text-base font-bold uppercase tracking-[0.08em] text-[#0c1327] md:text-lg'>Parcelas: <span className='font-bold text-[#0619dd]'>{numeroParcelas}x</span></label>
+                    <input type="range" name="numeroParcelas" value={numeroParcelas} min={1} max={numeroParcelasMaximo} onChange={(e) => setNumeroParcelas(Number(e.target.value))} className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-[#0619dd]' style={{ accentColor: '#0619dd' }} />
+                    <p className='text-xs font-medium text-slate-700 md:text-sm'>AtÃ© {numeroParcelasSemJuros}x <span className='font-bold text-[#0619dd]'>SEM JUROS</span></p>
                 </div>
                 {testDescontoAula && <DivDescontoAula />}
                 {temDescontoAluguel && <DivDescontoVeiculo />}
                 <MilestoneInfo />
             </div>
-            <div className='border-t border-gray-200 pt-4'>
+            <div className='border-t border-[#0f172a]/12 pt-4'>
                 <Part2 />
             </div>
         </div>

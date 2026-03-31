@@ -1,23 +1,20 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import Logo from '../assets/logo.png';
+"use client";
+import React, { useEffect, useState } from "react";
+import Logo from "../assets/logo.png";
+import ScrollingBanner from "./ScrollingBanner";
 
 export default function Navbar() {
   const [menuAberto, setMenuAberto] = useState(false);
-  const [formAberto, setFormAberto] = useState(false);
+  const [navbarCompacta, setNavbarCompacta] = useState(false);
 
   useEffect(() => {
-    const navbar = document.getElementById('navbar');
     const handleScroll = () => {
-      if (window.scrollY > 0){
-        navbar?.classList.remove("w-[90%]", "mt-5", "rounded-md");
-        navbar?.classList.add("w-screen", "mt-0", "shadow-lg", "transition-all", "duration-300");
-      }else {
-        navbar?.classList.add("w-[90%]", "mt-5", "rounded-md");
-        navbar?.classList.remove("w-screen", "mt-0", "shadow-lg");
-      }
-    }
-    window.addEventListener('scroll', handleScroll);
+      setNavbarCompacta(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
@@ -29,68 +26,75 @@ export default function Navbar() {
   };
 
   const menuLinks = [
-    { href: '/#sobre', label: 'Sobre' },
-    { href: '/planos', label: 'Planos' },
-    { href: '/#endereco', label: 'Endereço' },
-    { href: '/cursos', label: 'Cursos' },
+    { href: "/#sobre", label: "Sobre" },
+    { href: "/planos", label: "Planos" },
+    { href: "/#endereco", label: "Endereco" },
+    { href: "/cursos", label: "Cursos" },
   ];
 
   const desktopLinks = [
-    { href: '/', label: 'Inicio' },
-    { href: '/#sobre', label: 'Sobre' },
-    { href: '/planos', label: 'Planos' },
-    { href: '/#endereco', label: 'Endereço' },
-    { href: '/cursos', label: 'Cursos' },
+    { href: "/", label: "Inicio" },
+    { href: "/#sobre", label: "Sobre" },
+    { href: "/planos", label: "Planos" },
+    { href: "/#endereco", label: "Endereco" },
+    { href: "/cursos", label: "Cursos" },
   ];
 
   return (
-    <div className='w-screen flex justify-center'>
-      <nav id='navbar' className="flex flex-col gap-4 w-[90%] mt-5 p-4 rounded-lg justify-between px-6 lg:px-10 items-center bg-white z-50 fixed border border-gray-200 transition-all duration-300">
-        <div className="flex gap-4 w-full justify-between items-center">
-          {/* Logo */}
-          <img 
-            src={Logo.src} 
-            height="45" 
-            width="45" 
-            className="rounded-lg" 
-            alt="Logo Autoescola Ideal"
-          />
+    <header className="site-nav fixed top-0 z-50 w-full bg-[#050f93] text-white transition-all duration-300">
+      <div
+        className={`mx-auto flex w-full max-w-[1180px] flex-col px-3 sm:px-4 md:px-5 lg:px-6 ${navbarCompacta ? "py-2.5" : "py-3"}`}
+      >
+        <div className="flex w-full items-center justify-between gap-3">
+          <a href="/" className="min-w-0 flex items-center gap-2 sm:gap-3" aria-label="Ir para o inicio">
+            <img
+              src={Logo.src}
+              height="46"
+              width="46"
+              className="h-10 w-10 rounded-md border border-white/15 sm:h-[46px] sm:w-[46px]"
+              alt="Logo Autoescola Ideal"
+            />
+            <div className="flex min-w-0 flex-col">
+              <span className="text-[0.58rem] uppercase tracking-[0.18em] text-white/95 sm:text-[0.67rem]">
+                Autoescola
+              </span>
+              <span className="truncate font-['Space_Grotesk'] text-sm leading-none tracking-wide sm:text-lg">
+                IDEAL JALES
+              </span>
+            </div>
+          </a>
 
-          {/* Menu Desktop */}
-          <div className="gap-8 hidden lg:flex items-center">
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegacao principal">
             {desktopLinks.map((link) => (
-              <div key={link.href} className="group relative">
-                <a className="cursor-pointer text-gray-700 font-medium text-sm transition-colors duration-300 hover:text-[#071CF8]" href={link.href}>
-                  {link.label}
-                </a>
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] group-hover:w-full transition-all duration-300"></div>
-              </div>
+              <a
+                key={link.href}
+                className="text-sm font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:text-[#ffcb00]"
+                href={link.href}
+              >
+                {link.label}
+              </a>
             ))}
-          </div>
+          </nav>
 
-          {/* Botão Área do Aluno (Desktop) */}
-          <a 
-            className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-white bg-[#071CF8] hover:bg-[#041092] transition-colors duration-300" 
-            href="https://novuscfc.app.br/" 
+          <a
+            className="hidden items-center gap-2 border border-black bg-[#ffcb00] px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-black transition hover:bg-[#ffd633] lg:inline-flex"
+            href="https://novuscfc.app.br/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Área do Aluno
+            Area do Aluno
             <span className="material-symbols-outlined text-base">contacts_product</span>
           </a>
 
-          {/* Botão Hamburger (Mobile) */}
-          <button 
-            className="group lg:hidden" 
+          <button
+            className="group shrink-0 rounded-md border border-white/25 px-2.5 py-2 lg:hidden"
             id="btn-hamburguer"
             onClick={toggleMenu}
             aria-label="Abrir menu"
             aria-expanded={menuAberto}
           >
             <span
-              className={`material-symbols-outlined cursor-pointer transition duration-300 ${
-                menuAberto ? 'rotate-90' : ''
-              }`}
+              className={`material-symbols-outlined transition duration-300 ${menuAberto ? "rotate-90 text-[#ffcb00]" : "text-white"}`}
               id="iconeMenu"
             >
               dehaze
@@ -98,45 +102,43 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Menu Mobile */}
         {menuAberto && (
-          <div className="flex flex-col bg-white w-[90%] p-6 gap-4 items-center rounded-lg border border-gray-200">
-            <div className="group relative w-full">
-              <a 
-                className="cursor-pointer text-gray-700 font-medium text-sm transition-colors duration-300 hover:text-[#0f3a7d]" 
+          <div className="mt-3 flex flex-col gap-3 rounded-lg border border-white/20 bg-[#0914a8] p-4 shadow-[0_18px_34px_-28px_rgba(0,0,0,0.7)] lg:hidden">
+            <div className="w-full border-b border-white/15 pb-3">
+              <a
+                className="block py-1 text-sm font-semibold uppercase tracking-[0.08em] text-white"
                 href="/"
                 onClick={fecharMenu}
               >
                 Inicio
               </a>
-              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] group-hover:w-full transition-all duration-300"></div>
             </div>
 
             {menuLinks.map((link) => (
-              <div key={link.href} className="group relative w-full">
-                <a 
-                  className="cursor-pointer text-gray-700 font-medium text-sm transition-colors duration-300 hover:text-[#071CF8]" 
+              <div key={link.href} className="w-full border-b border-white/15 pb-3 last:border-b-0 last:pb-0">
+                <a
+                  className="block py-1 text-sm font-semibold uppercase tracking-[0.08em] text-white"
                   href={link.href}
                   onClick={fecharMenu}
                 >
                   {link.label}
                 </a>
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] group-hover:w-full transition-all duration-300"></div>
               </div>
             ))}
 
-            <a 
-              className="bg-[#071CF8] w-full flex text-white py-2.5 px-4 rounded-lg font-semibold gap-2 justify-center items-center hover:bg-[#041092] transition-colors duration-300 text-sm" 
-              href="https://novuscfc.app.br/" 
+            <a
+              className="mt-2 inline-flex min-h-12 w-full items-center justify-center gap-2 border border-black bg-[#ffcb00] px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-black transition hover:bg-[#ffd633]"
+              href="https://novuscfc.app.br/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Área do Aluno
+              Area do Aluno
               <span className="material-symbols-outlined text-base">contacts_product</span>
             </a>
           </div>
         )}
-      </nav>
-    </div>
+      </div>
+      <ScrollingBanner />
+    </header>
   );
 }

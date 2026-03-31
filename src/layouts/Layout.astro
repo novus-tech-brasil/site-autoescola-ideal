@@ -2,6 +2,10 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.astro";
+import ModalController from "../components/ModalController";
+
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const gtmContainerId = import.meta.env.PUBLIC_GTM_ID;
 ---
 
 <!doctype html>
@@ -13,18 +17,48 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>Autoescola Ideal Jales - CNH Rápida e Preço Justo</title>
+    <title>Autoescola Ideal Jales - CNH RÃ¡pida e PreÃ§o Justo</title>
     <meta
       name="description"
-      content="Tire sua carteira de motorista com a Autoescola Ideal em Jales. Preço justo, instrutores qualificados e agendamento fácil."
+      content="Tire sua carteira de motorista com a Autoescola Ideal em Jales. PreÃ§o justo, instrutores qualificados e agendamento fÃ¡cil."
     />
+
+    {gtmContainerId ? (
+      <script is:inline>
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${gtmContainerId}');
+        `}
+      </script>
+    ) : null}
+
+    {gaMeasurementId ? (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+        <script is:inline>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '${gaMeasurementId}');
+          `}
+        </script>
+      </>
+    ) : null}
 
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- SEO: Schema.org (LocalBusiness) -->
     <script
       type="application/ld+json"
       set:html={`{
@@ -49,13 +83,25 @@ import Footer from "../components/Footer.astro";
     />
   </head>
 
-  <body class="flex flex-col">
+  <body class="flex flex-col site-shell">
+    {gtmContainerId ? (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${gtmContainerId}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    ) : null}
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteÃºdo</a>
     <Navbar client:load />
-    <main class="flex flex-col gap-0 bg-white">
+    <main id="conteudo-principal" class="site-main flex flex-col gap-0">
       <slot />
       <a
         href="https://wa.me/5517997572900"
-        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500 text-white shadow-lg hover:shadow-xl hover:bg-green-600 transition-colors duration-300 overflow-hidden z-[9999] fixed right-6 bottom-10 animate-bounce"
+        data-lead-source="floating-whatsapp"
+        class="floating-whatsapp fixed bottom-4 right-4 z-50 inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-green-500 text-white transition-colors duration-300 hover:bg-green-600 sm:bottom-5 sm:right-5 sm:h-15 sm:w-15"
         role="button"
         target="_blank"
         aria-label="Fale conosco pelo WhatsApp"
@@ -64,10 +110,11 @@ import Footer from "../components/Footer.astro";
         <img
           src="/icone-whatsapp.jpg"
           alt="WhatsApp"
-          class="w-full h-full object-cover"
+          class="h-full w-full object-cover"
         />
       </a>
     </main>
+    <ModalController client:load />
 
     <Footer />
   </body>
@@ -83,3 +130,4 @@ import Footer from "../components/Footer.astro";
 </style>
 
 <script is:inline src="../javascript/scripts.js"></script>
+<script is:inline src="../javascript/analytics.js"></script>

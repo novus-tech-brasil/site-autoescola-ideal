@@ -1,87 +1,48 @@
 <section
   id="porque-escolher"
-  class="relative flex flex-col justify-center md:px-[10%] gap-12 py-20 px-6 bg-gray-50"
+  class="material-surface-strong py-12 md:py-20"
   aria-label="Motivos para escolher a Autoescola IDEAL"
 >
-  <!-- Título principal -->
-  <div class="text-center">
-    <h2 class="text-4xl md:text-5xl font-black text-[#071CF8] leading-tight mb-4">
-      Por que escolher a <span class="text-[#f59e0b]">IDEAL?</span>
-    </h2>
-    <div class="h-1 w-20 bg-[#FFCB00] rounded mx-auto"></div>
-  </div>
+  <div class="section-wrap grid grid-cols-1 gap-4 lg:grid-cols-12">
+    <div class="stagger-in editorial-card col-span-1 bg-white p-5 sm:p-6 md:p-8 lg:col-span-8">
+      <p class="eyebrow text-[#0619dd]">Por Que Escolher a IDEAL</p>
+      <h2 class="headline-lg mt-4 text-balance text-[#0c1327]">
+        Estrutura profissional
+        <span class="text-[#0619dd]">para você evoluir</span>
+      </h2>
+      <p class="copy-limit text-pretty mt-5 text-base leading-relaxed text-slate-700 md:text-lg">
+        Método prático, acompanhamento próximo e ritmo de aula pensado para
+        reduzir insegurança e aumentar seu desempenho no volante.
+      </p>
+    </div>
 
-  <!-- Descrição -->
-  <p class="text-center text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light">
-    Autoescola especializada com ensino <span class="font-semibold text-[#071CF8]">premium</span>. Aqui formamos <span class="font-semibold text-[#FFCB00]">pilotos de verdade</span> sem enrolação e com preço justo!
-  </p>
+    <aside class="stagger-in stagger-delay-1 editorial-card col-span-1 bg-[#050f93] p-5 text-white sm:p-6 md:p-8 lg:col-span-4">
+      <p class="eyebrow text-[#ffcb00]">Resultado</p>
+      <p class="mt-4 text-balance font-['Space_Grotesk'] text-3xl uppercase leading-[1.03]">Você aprende com clareza e chega mais preparado no exame.</p>
+    </aside>
 
-  <!-- Grid de vantagens -->
-  <div
-    class="grid grid-cols-1 lg:grid-cols-3 gap-8"
-    aria-label="Benefícios da Autoescola IDEAL"
-  >
-    <!-- Card 1 -->
-    <article
-      class="card-premium overflow-hidden hover:border-[#FFCB00]"
-      aria-label="Frota atualizada"
-    >
-      <div class="h-32 bg-[#071CF8] p-6 flex items-center justify-center">
-        <span
-          class="material-symbols-outlined text-6xl text-white"
-          aria-hidden="true"
-        >
-          airport_shuttle
-        </span>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-[#071CF8] mb-3">Frota Atualizada</h3>
-        <p class="text-gray-700 text-base leading-relaxed font-light">
-          Carros modernos, revisados e confortáveis para garantir que seu aprendizado seja <span class="font-semibold">seguro e eficaz</span>.
-        </p>
-      </div>
+    <article class="stagger-in stagger-delay-1 editorial-card col-span-1 bg-white p-5 sm:p-6 md:p-8 lg:col-span-4" aria-label="Frota atualizada">
+      <span class="material-symbols-outlined text-5xl text-[#0619dd]">airport_shuttle</span>
+      <h3 class="mt-4 font-['Space_Grotesk'] text-2xl uppercase leading-none">Frota atualizada</h3>
+      <p class="text-pretty mt-3 text-sm leading-relaxed text-slate-700 md:text-base">
+        Veículos modernos e revisados para uma rotina de aulas com mais conforto.
+      </p>
     </article>
 
-    <!-- Card 2 -->
-    <article
-      class="card-premium overflow-hidden hover:border-[#FFCB00]"
-      aria-label="Instrutores qualificados"
-    >
-      <div class="h-32 bg-[#071CF8] p-6 flex items-center justify-center">
-        <span
-          class="material-symbols-outlined text-6xl text-white"
-          aria-hidden="true"
-        >
-          school
-        </span>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-[#071CF8] mb-3">Instrutores Qualificados</h3>
-        <p class="text-gray-700 text-base leading-relaxed font-light">
-          Profissionais <span class="font-semibold">experientes</span> e treinados para guiar você com paciência e eficiência.
-        </p>
-      </div>
+    <article class="stagger-in stagger-delay-2 editorial-card col-span-1 bg-white p-5 sm:p-6 md:p-8 lg:col-span-4" aria-label="Instrutores qualificados">
+      <span class="material-symbols-outlined text-5xl text-[#0619dd]">school</span>
+      <h3 class="mt-4 font-['Space_Grotesk'] text-2xl uppercase leading-none">Instrutores qualificados</h3>
+      <p class="text-pretty mt-3 text-sm leading-relaxed text-slate-700 md:text-base">
+        Equipe experiente para corrigir detalhes e acelerar sua evolução prática.
+      </p>
     </article>
 
-    <!-- Card 3 -->
-    <article
-      class="card-premium overflow-hidden hover:border-[#FFCB00]"
-      aria-label="Tecnologia e inovação"
-    >
-      <div class="h-32 bg-[#071CF8] p-6 flex items-center justify-center">
-        <span
-          class="material-symbols-outlined text-6xl text-white"
-          aria-hidden="true"
-        >
-          memory
-        </span>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-[#071CF8] mb-3">Tecnologia e Inovação</h3>
-        <p class="text-gray-700 text-base leading-relaxed font-light">
-          Plataformas modernas, simulações e um sistema <span class="font-semibold">agendamento online</span> eficiente.
-        </p>
-      </div>
+    <article class="stagger-in stagger-delay-3 editorial-card col-span-1 bg-[#ffcb00] p-6 text-black md:p-8 lg:col-span-4" aria-label="Atendimento ágil">
+      <span class="material-symbols-outlined text-5xl text-black">bolt</span>
+      <h3 class="mt-4 font-['Space_Grotesk'] text-2xl uppercase leading-none">Atendimento ágil</h3>
+      <p class="text-pretty mt-3 text-sm leading-relaxed text-black/80 md:text-base">
+        Resposta rápida e orientação objetiva para você não perder tempo.
+      </p>
     </article>
   </div>
 </section>
