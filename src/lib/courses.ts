@@ -67,7 +67,7 @@ export const courses: Course[] = [
       estrelas: 5
     },
     documentos: "CNH e E-mail",
-    validade: "Atualmente, vitalicia, mas recomenda-se reciclagem a cada 5 anos"
+    validade: "Atualmente, vitalícia, mas recomenda-se reciclagem a cada 5 anos"
   },
   {
     id: "transporte-escolar",
@@ -104,7 +104,7 @@ export const courses: Course[] = [
       estrelas: 5
     },
     documentos: "CNH e E-mail",
-    validade: "Atualmente, vitalicia, mas recomenda-se reciclagem a cada 5 anos"
+    validade: "Atualmente, vitalícia, mas recomenda-se reciclagem a cada 5 anos"
   },
   {
     id: "transporte-coletivo",
@@ -141,7 +141,7 @@ export const courses: Course[] = [
       estrelas: 5
     },
     documentos: "CNH e E-mail",
-    validade: "Atualmente, vitalicia, mas recomenda-se reciclagem a cada 5 anos"
+    validade: "Atualmente, vitalícia, mas recomenda-se reciclagem a cada 5 anos"
   },
   {
     id: "transporte-cargas-indivisiveis",
@@ -178,7 +178,7 @@ export const courses: Course[] = [
       estrelas: 5
     },
     documentos: "CNH e E-mail",
-    validade: "Atualmente, vitalicia, mas recomenda-se reciclagem a cada 5 anos"
+    validade: "Atualmente, vitalícia, mas recomenda-se reciclagem a cada 5 anos"
   },
   {
     id: "transporte-emergencial",

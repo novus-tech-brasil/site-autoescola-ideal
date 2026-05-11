@@ -37,9 +37,9 @@ export default function ExitIntentModal({
       <div className="editorial-card w-full max-w-md border border-[#0f172a]/25 bg-white p-5 shadow-2xl sm:p-6">
         <div className="mb-4 flex items-start justify-between gap-3">
           <div>
-            <p className="text-[0.66rem] font-bold uppercase tracking-[0.12em] text-[#0619dd]">Ultima chance</p>
+            <p className="text-[0.66rem] font-bold uppercase tracking-[0.12em] text-[#0619dd]">Última chance</p>
             <h3 className="mt-2 text-balance text-2xl uppercase leading-none text-[#0c1327]">
-              Nao saia sem falar com a equipe
+              Não saia sem falar com a equipe
             </h3>
           </div>
           <button
@@ -53,7 +53,7 @@ export default function ExitIntentModal({
         </div>
 
         <p className="text-pretty text-sm leading-relaxed text-slate-700">
-          A gente te envia um plano orientado para seu perfil no WhatsApp, sem compromisso e com resposta rapida.
+          A gente te envia um plano orientado para seu perfil no WhatsApp, sem compromisso e com resposta rápida.
         </p>
 
         <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">

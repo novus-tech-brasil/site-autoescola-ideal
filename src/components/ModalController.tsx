@@ -94,7 +94,7 @@ function buildWhatsAppLeadMessage(
   variant: Variant,
 ): string {
   return [
-    "Ola! Quero mais informacoes sobre minha CNH.",
+    "Olá! Quero mais informações sobre minha CNH.",
     "",
     `Nome: ${payload.name}`,
     `WhatsApp: ${payload.phone}`,
@@ -125,19 +125,19 @@ export default function ModalController() {
   const modalContent = useMemo(() => {
     return {
       timed: {
-        title: variant === "A" ? "Quer ajuda para escolher seu plano?" : "Tem duvida sobre valores e etapas?",
+        title: variant === "A" ? "Quer ajuda para escolher seu plano?" : "Tem dúvida sobre valores e etapas?",
         description:
           variant === "A"
-            ? "Preencha rapido e nossa equipe monta uma opcao de plano alinhada ao seu perfil."
-            : "A gente te orienta no WhatsApp com um caminho simples para iniciar sua habilitacao.",
-        ctaLabel: "Receber orientacao",
-        dismissLabel: "Agora nao",
+            ? "Preencha rápido e nossa equipe monta uma opção de plano alinhada ao seu perfil."
+            : "A gente te orienta no WhatsApp com um caminho simples para iniciar sua habilitação.",
+        ctaLabel: "Receber orientação",
+        dismissLabel: "Agora não",
       },
       scroll: {
-        title: "Voce chegou ate aqui, falta pouco",
+        title: "Você chegou até aqui, falta pouco",
         description:
-          "Se quiser, ja te enviamos no WhatsApp as opcoes mais buscadas para voce decidir sem enrolacao.",
-        ctaLabel: "Quero as opcoes",
+          "Se quiser, já te enviamos no WhatsApp as opções mais buscadas para você decidir sem enrolação.",
+        ctaLabel: "Quero as opções",
         dismissLabel: "Continuar lendo",
       },
       action: {
@@ -240,7 +240,7 @@ export default function ModalController() {
   const navigateToPendingAction = useCallback(() => {
     const pending = pendingActionRef.current;
     if (!pending) {
-      openWhatsApp("Ola! Quero falar com um especialista da Autoescola IDEAL.");
+      openWhatsApp("Olá! Quero falar com um especialista da Autoescola IDEAL.");
       return;
     }
 
@@ -424,7 +424,7 @@ export default function ModalController() {
             variant,
           });
           closeModal("direct-whatsapp");
-          openWhatsApp("Ola! Vi a oferta da Autoescola IDEAL e quero atendimento prioritario.");
+          openWhatsApp("Olá! Vi a oferta da Autoescola IDEAL e quero atendimento prioritário.");
         }}
       />
     </React.Suspense>

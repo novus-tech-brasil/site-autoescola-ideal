@@ -50,7 +50,7 @@ export const COMPANY_CONFIG = {
   // Cores da marca
   colors: {
     primary: '#0066CC', // Azul
-    secondary: '#FF8C00', // Laranja/Âmbar
+    secondary: '#FF8C00', // Laranja/âmbar
     success: '#22C55E', // Verde (WhatsApp)
     danger: '#EF4444', // Vermelho
   },

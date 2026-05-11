@@ -9,7 +9,7 @@ interface CoursePageProps {
 }
 
 export default function CoursePage({ course, whatsappNumber }: CoursePageProps) {
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Ola! Tenho interesse no curso de ${course.nome}. Pode me informar mais detalhes?`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá! Tenho interesse no curso de ${course.nome}. Pode me informar mais detalhes?`;
 
   return (
     <div className="w-full">
@@ -26,7 +26,7 @@ export default function CoursePage({ course, whatsappNumber }: CoursePageProps) 
           <aside className="editorial-card col-span-1 flex flex-col justify-between bg-[#ffcb00] p-5 text-black sm:p-6 md:p-9 lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-[0.14em]">Atendimento</p>
             <p className="mt-2 text-balance text-2xl uppercase leading-tight">
-              Tire duvidas e reserve sua vaga agora.
+              Tire dúvidas e reserve sua vaga agora.
             </p>
             <a
               href={whatsappLink}
@@ -47,7 +47,7 @@ export default function CoursePage({ course, whatsappNumber }: CoursePageProps) 
         <section className="material-surface-strong py-14 md:py-18">
           <div className="section-wrap">
             <h2 className="mb-10 text-balance text-center text-3xl uppercase leading-none text-[#0c1327] md:text-4xl">
-              Beneficios do Curso
+              Benefícios do Curso
             </h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {course.beneficiosDetalhado.map((beneficio, index) => (
@@ -68,12 +68,12 @@ export default function CoursePage({ course, whatsappNumber }: CoursePageProps) 
       <section className="bg-[#ffcb00] py-14 text-black md:py-18">
         <div className="section-wrap text-center">
           <h2 className="mb-8 text-balance text-3xl uppercase leading-none md:text-4xl">
-            Preco Especial
+            Preço Especial
           </h2>
           <div className="flex flex-col items-center gap-4">
             <p className="text-xl opacity-70 line-through md:text-2xl">De {course.precoOriginal}</p>
             <p className="break-words text-center text-4xl uppercase sm:text-5xl md:text-6xl">
-              {course.preco} a vista
+              {course.preco} à vista
             </p>
             <p className="text-base text-black md:text-lg">ou {course.parcelado}</p>
           </div>
@@ -130,7 +130,7 @@ export default function CoursePage({ course, whatsappNumber }: CoursePageProps) 
       <section className="material-hero py-14 md:py-18">
         <div className="section-wrap text-center">
           <h2 className="mb-6 text-balance text-3xl uppercase leading-none text-white md:text-4xl">
-            Nao Perca Tempo!
+            Não Perca Tempo!
           </h2>
           <p className="copy-limit text-pretty mx-auto mb-8 text-base text-white/95 md:text-xl">
             Comece sua jornada profissional agora. Inscreva-se no curso de {course.nome}
@@ -152,7 +152,7 @@ export default function CoursePage({ course, whatsappNumber }: CoursePageProps) 
       <section className="material-surface py-14 md:py-18">
         <div className="section-wrap">
           <h2 className="mb-10 text-balance text-center text-3xl uppercase leading-none text-[#0c1327] md:text-4xl">
-            Informacoes Importantes
+            Informações Importantes
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {course.documentos && (
@@ -160,7 +160,7 @@ export default function CoursePage({ course, whatsappNumber }: CoursePageProps) 
                 <div className="mb-4 flex items-center gap-3">
                   <span className="material-symbols-outlined text-2xl text-[#0619dd]">description</span>
                   <h3 className="text-xl font-semibold uppercase tracking-[0.08em] text-[#0c1327]">
-                    Documentos Necessarios
+                    Documentos Necessários
                   </h3>
                 </div>
                 <p className="text-slate-700">{course.documentos}</p>

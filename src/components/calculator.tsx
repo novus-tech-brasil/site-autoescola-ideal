@@ -98,7 +98,7 @@ export default function Calculator() {
                                 </h1>
 
                                 <div className='flex gap-2'>
-                                    <button className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-black bg-[#ffcb00] p-2 text-xl font-bold text-black transition hover:bg-[#ffd633]' onClick={() => alterarAulas(t, t == 'carro' ? numAulasCarro - 1 : numAulasMoto - 1)}>âˆ’</button>
+                                    <button className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-black bg-[#ffcb00] p-2 text-xl font-bold text-black transition hover:bg-[#ffd633]' onClick={() => alterarAulas(t, t == 'carro' ? numAulasCarro - 1 : numAulasMoto - 1)}>-</button>
                                     <button className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-black bg-[#ffcb00] p-2 text-xl font-bold text-black transition hover:bg-[#ffd633]' onClick={() => alterarAulas(t, t == 'carro' ? numAulasCarro + 1 : numAulasMoto + 1)}>+</button>
                                 </div>
 
@@ -188,7 +188,7 @@ export default function Calculator() {
                     </span>
                     <div className="flex flex-col">
                         <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#243b83] md:text-sm">
-                            Desconto Aplicado no aluguel do(s) veÃ­culo(s)
+                            Desconto Aplicado no aluguel do(s) veículo(s)
                         </span>
                         <span className="mt-1 text-lg font-bold text-[#0c1327] md:text-xl">
                             {descontoAluguel.toFixed(0)}% de desconto
@@ -202,13 +202,13 @@ export default function Calculator() {
     const Detalhes = () => {
         return (
             <div className='h-full w-full rounded-md border border-[#0f172a]/15 bg-white p-4 md:p-5'>
-                <h2 className='mb-4 text-base font-bold uppercase tracking-[0.08em] text-[#0c1327] md:text-lg'>O que estÃ¡ incluÃ­do:</h2>
+                <h2 className='mb-4 text-base font-bold uppercase tracking-[0.08em] text-[#0c1327] md:text-lg'>O que está incluído:</h2>
                 <ul className='flex list-disc flex-col space-y-2 list-inside text-sm text-slate-700 md:text-base'>
                     {tipo.toLocaleLowerCase().includes("carro") && <li>{numAulasCarro} x Aulas de Carro</li>}
                     {tipo.toLocaleLowerCase().includes("moto") && <li>{numAulasMoto} x Aulas de Moto</li>}
-                    <li>VeÃ­culo incluso no exame prÃ¡tico</li>
-                    <li>Agendamento feito por nÃ³s</li>
-                    {aulasTotaisSoma >= 6 && <li>Base TeÃ³rica para Aprendizado Eficiente</li>}
+                    <li>Veículo incluso no exame prático</li>
+                    <li>Agendamento feito por nós</li>
+                    {aulasTotaisSoma >= 6 && <li>Base Teórica para Aprendizado Eficiente</li>}
                     {aulasTotaisSoma >= 8 && <>
                         <li>Processo 100% personalizado</li>
                         <li>Monitoramento de aprendizagem ESPECIAL</li>
@@ -241,13 +241,13 @@ export default function Calculator() {
             }));
         }
 
-        const mensagem = `OlÃ¡, gostaria de iniciar meu processo para tirar a CNH com o seguinte plano:%0A%0A` +
+        const mensagem = `Olá, gostaria de iniciar meu processo para tirar a CNH com o seguinte plano:%0A%0A` +
             `Tipo: ${tipo === 'carroMoto' ? 'Carro e Moto' : tipo === 'carro' ? 'Apenas Carro' : 'Apenas Moto'}%0A` +
-            `NÃºmero de aulas de ${tipo === 'carroMoto' ? `carro: ${numAulasCarro}%0ANÃºmero de aulas de moto: ${numAulasMoto}%0A` : (tipo === 'carro' ? `carro: ${numAulasCarro}%0A` : `moto: ${numAulasMoto}%0A`)}` +
-            `NÃºmero de parcelas: ${numeroParcelas}%0A` +
+            `Número de aulas de ${tipo === 'carroMoto' ? `carro: ${numAulasCarro}%0ANúmero de aulas de moto: ${numAulasMoto}%0A` : (tipo === 'carro' ? `carro: ${numAulasCarro}%0A` : `moto: ${numAulasMoto}%0A`)}` +
+            `Número de parcelas: ${numeroParcelas}%0A` +
             `Valor Aproximado ${formatter.format(valorTotal)}%0A` +
             `${numeroParcelas > numeroParcelasSemJuros ? 'Com juros da maquininha inclusos!%0A%0A' : 'SEM JUROS%0A%0A'}` +
-            `Por favor, me envie mais informaÃ§Ãµes sobre como proceder. Obrigado!`;
+            `Por favor, me envie mais informações sobre como proceder. Obrigado!`;
         window.open(`https://wa.me/5517997572900?text=${mensagem}`, '_blank');
     }
 
@@ -268,24 +268,24 @@ export default function Calculator() {
     const Part2 = () => (
         <div className='flex flex-col gap-3'>
             <h1 className='break-words text-3xl font-bold uppercase leading-tight text-[#050f93] sm:text-4xl md:text-5xl xl:text-6xl'>{formatter.format(valorTotal)}</h1>
-            {numeroParcelas > 1 ? <p className='text-pretty text-sm leading-relaxed text-slate-600 md:text-base'>ou <span className='font-bold text-[#0619dd]'>{numeroParcelas}x</span> de <span className='font-bold text-[#0619dd]'>{formatter.format(valorTotal / numeroParcelas)}</span> <span className={valorTotal == valorTotalSemJuros ? 'font-bold text-green-700' : 'text-slate-600'}>{valorTotal == valorTotalSemJuros ? 'âœ“ SEM JUROS' : 'com juros'}</span></p> : <p className='text-sm font-medium text-slate-600 md:text-base'>Pagamento Ã  vista</p>}
+            {numeroParcelas > 1 ? <p className='text-pretty text-sm leading-relaxed text-slate-600 md:text-base'>ou <span className='font-bold text-[#0619dd]'>{numeroParcelas}x</span> de <span className='font-bold text-[#0619dd]'>{formatter.format(valorTotal / numeroParcelas)}</span> <span className={valorTotal == valorTotalSemJuros ? 'font-bold text-green-700' : 'text-slate-600'}>{valorTotal == valorTotalSemJuros ? 'SEM JUROS' : 'com juros'}</span></p> : <p className='text-sm font-medium text-slate-600 md:text-base'>Pagamento à vista</p>}
             <details className='group mt-6 md:mt-8'>
                 <summary className='flex cursor-pointer items-center justify-between gap-3 rounded-md border border-[#0f172a]/15 bg-slate-50 p-4 text-left text-sm font-semibold uppercase tracking-[0.08em] text-[#0c1327] transition hover:bg-slate-100 md:text-base'>
                     <div className='flex flex-1 gap-3 items-center'>
                         <span className="material-symbols-outlined group-open:rotate-90 transition-transform">
                             chevron_right
                         </span>
-                        Como Ã© calculado o valor?
+                        Como é calculado o valor?
                     </div>
                 </summary>
                 <div className='border-l-4 border-[#0619dd] bg-slate-50 p-4 md:p-5'>
                     <h3 className='mb-1 text-xs font-bold uppercase tracking-[0.08em] text-slate-600 md:text-sm'>Valor por aula:</h3>
                     <h1 className='mb-4 text-2xl font-bold text-[#0619dd] md:text-3xl'>{formatter.format(valorPorAula)}</h1>
-                    <h3 className='mb-1 text-xs font-bold uppercase tracking-[0.08em] text-slate-600 md:text-sm'>Aluguel do(s) veÃ­culo(s):</h3>
-                    <h1 className='text-2xl font-bold text-[#0619dd] md:text-3xl'>{valorAluguel > 0 ? formatter.format(valorAluguel) : 'âœ“ GrÃ¡tis!'}
-                        <p className='text-xs text-slate-700'>* O aluguel Ã© incluso no valor do plano!</p>
+                    <h3 className='mb-1 text-xs font-bold uppercase tracking-[0.08em] text-slate-600 md:text-sm'>Aluguel do(s) veículo(s):</h3>
+                    <h1 className='text-2xl font-bold text-[#0619dd] md:text-3xl'>{valorAluguel > 0 ? formatter.format(valorAluguel) : 'Grátis!'}
+                        <p className='text-xs text-slate-700'>* O aluguel é incluso no valor do plano!</p>
                         <p className="text-xs text-slate-700">
-                            * O valor do aluguel incluÃ­do neste pacote Ã© vÃ¡lido apenas para o primeiro exame de cada categoria. Em caso de reprovaÃ§Ã£o, serÃ¡ necessÃ¡rio efetuar um novo pagamento do aluguel.
+                            * O valor do aluguel incluído neste pacote é válido apenas para o primeiro exame de cada categoria. Em caso de reprovação, será necessário efetuar um novo pagamento do aluguel.
                         </p>
                     </h1>
                 </div>
@@ -296,12 +296,12 @@ export default function Calculator() {
                         <span className="material-symbols-outlined group-open:rotate-90 transition-transform">
                             chevron_right
                         </span>
-                        O que estÃ¡ incluso?
+                        O que está incluso?
                     </div>
                 </summary>
                 <div className='border-l-4 border-[#0619dd] bg-slate-50 p-4 md:p-5'>
                     <Detalhes />
-                    <p className='mt-4 text-xs text-slate-700 md:text-sm'>* Os valores nÃ£o incluem taxas e exames adicionais do Detran.</p>
+                    <p className='mt-4 text-xs text-slate-700 md:text-sm'>* Os valores não incluem taxas e exames adicionais do Detran.</p>
                 </div>
             </details>
 
@@ -325,7 +325,7 @@ export default function Calculator() {
         if (aulasTotaisSoma < 4) {
             proximoMilestone = '39% de desconto';
             aulasProximas = 4 - aulasTotaisSoma;
-            mensagem = `Faltam apenas ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para vocÃª ganhar ${proximoMilestone}!`;
+            mensagem = `Faltam apenas ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para você ganhar ${proximoMilestone}!`;
         } else if (aulasTotaisSoma >= 4 && aulasTotaisSoma < 10) {
             proximoMilestone = '45% de desconto';
             aulasProximas = 10 - aulasTotaisSoma;
@@ -335,11 +335,11 @@ export default function Calculator() {
             aulasProximas = 15 - aulasTotaisSoma;
             mensagem = `Faltam ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para desbloqueiar ${proximoMilestone}!`;
         } else if (aulasTotaisSoma >= 15 && aulasTotaisSoma < 20) {
-            proximoMilestone = '51% de desconto (+ aluguel grÃ¡tis)';
+            proximoMilestone = '51% de desconto (+ aluguel grátis)';
             aulasProximas = 20 - aulasTotaisSoma;
             mensagem = `Faltam ${aulasProximas} aula${aulasProximas > 1 ? 's' : ''} para desbloqueiar ${proximoMilestone}!`;
         } else if (aulasTotaisSoma >= 20) {
-            mensagem = 'âœ“ VocÃª desbloqueou o melhor desconto! 51% de desconto + Aluguel GrÃ¡tis!';
+            mensagem = 'Você desbloqueou o melhor desconto! 51% de desconto + Aluguel Grátis!';
         }
 
         return (
@@ -350,7 +350,7 @@ export default function Calculator() {
                     </span>
                     <div className="flex flex-col">
                         <span className="text-xs font-bold uppercase tracking-[0.14em] text-green-800 md:text-sm">
-                            PrÃ³ximo Milestone
+                            Próximo marco
                         </span>
                         <span className="text-pretty mt-1 text-sm font-semibold text-slate-900 md:text-base">
                             {mensagem}
@@ -398,7 +398,7 @@ export default function Calculator() {
                 <div className='mt-4 flex flex-col gap-3 md:mt-6'>
                     <label htmlFor='numeroParcelas' className='text-base font-bold uppercase tracking-[0.08em] text-[#0c1327] md:text-lg'>Parcelas: <span className='font-bold text-[#0619dd]'>{numeroParcelas}x</span></label>
                     <input type="range" name="numeroParcelas" value={numeroParcelas} min={1} max={numeroParcelasMaximo} onChange={(e) => setNumeroParcelas(Number(e.target.value))} className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-[#0619dd]' style={{ accentColor: '#0619dd' }} />
-                    <p className='text-xs font-medium text-slate-700 md:text-sm'>AtÃ© {numeroParcelasSemJuros}x <span className='font-bold text-[#0619dd]'>SEM JUROS</span></p>
+                    <p className='text-xs font-medium text-slate-700 md:text-sm'>Até {numeroParcelasSemJuros}x <span className='font-bold text-[#0619dd]'>SEM JUROS</span></p>
                 </div>
                 {testDescontoAula && <DivDescontoAula />}
                 {temDescontoAluguel && <DivDescontoVeiculo />}

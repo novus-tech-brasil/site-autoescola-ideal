@@ -7,17 +7,17 @@ type Variant = "A" | "B";
 const VARIANT_STORAGE_KEY = "ideal_ab_variant_v1";
 
 const CONTENT_A = [
-  "+ de 1.000 alunos atendidos em Jales e regiao",
-  "Instrutores qualificados e atendimento rapido",
-  "Simulacao de plano em menos de 2 minutos",
-  "Suporte do inicio ate o exame pratico",
+  "+ de 1.000 alunos atendidos em Jales e região",
+  "Instrutores qualificados e atendimento rápido",
+  "Simulação de plano em menos de 2 minutos",
+  "Suporte do início até o exame prático",
 ];
 
 const CONTENT_B = [
   "Vagas da semana com atendimento prioritario",
   "Plano personalizado para carro, moto ou ambos",
   "Equipe responde no WhatsApp em poucos minutos",
-  "Processo guiado para voce avancar com seguranca",
+  "Processo guiado para você avançar com segurança",
 ];
 
 function getOrCreateVariant(): Variant {
@@ -51,7 +51,7 @@ export default function ScrollingBanner() {
   return (
     <section
       className="relative z-20 w-full border-y border-[#0f172a]/15 bg-white"
-      aria-label="Beneficios e avisos"
+      aria-label="Benefícios e avisos"
       data-ab-variant={variant}
     >
       <div className="overflow-hidden w-full">

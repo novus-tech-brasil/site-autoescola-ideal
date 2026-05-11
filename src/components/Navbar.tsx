@@ -28,15 +28,15 @@ export default function Navbar() {
   const menuLinks = [
     { href: "/#sobre", label: "Sobre" },
     { href: "/planos", label: "Planos" },
-    { href: "/#endereco", label: "Endereco" },
+    { href: "/#endereco", label: "Endereço" },
     { href: "/cursos", label: "Cursos" },
   ];
 
   const desktopLinks = [
-    { href: "/", label: "Inicio" },
+    { href: "/", label: "Início" },
     { href: "/#sobre", label: "Sobre" },
     { href: "/planos", label: "Planos" },
-    { href: "/#endereco", label: "Endereco" },
+    { href: "/#endereco", label: "Endereço" },
     { href: "/cursos", label: "Cursos" },
   ];
 
@@ -46,7 +46,7 @@ export default function Navbar() {
         className={`mx-auto flex w-full max-w-[1180px] flex-col px-3 sm:px-4 md:px-5 lg:px-6 ${navbarCompacta ? "py-2.5" : "py-3"}`}
       >
         <div className="flex w-full items-center justify-between gap-3">
-          <a href="/" className="min-w-0 flex items-center gap-2 sm:gap-3" aria-label="Ir para o inicio">
+          <a href="/" className="min-w-0 flex items-center gap-2 sm:gap-3" aria-label="Ir para o início">
             <img
               src={Logo.src}
               height="46"
@@ -64,7 +64,7 @@ export default function Navbar() {
             </div>
           </a>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegacao principal">
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
             {desktopLinks.map((link) => (
               <a
                 key={link.href}
@@ -82,8 +82,8 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Area do Aluno
-            <span className="material-symbols-outlined text-base">contacts_product</span>
+            Área do Aluno
+            <span className="material-symbols-outlined text-base">account_circle</span>
           </a>
 
           <button
@@ -110,7 +110,7 @@ export default function Navbar() {
                 href="/"
                 onClick={fecharMenu}
               >
-                Inicio
+                Início
               </a>
             </div>
 
@@ -132,8 +132,8 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Area do Aluno
-              <span className="material-symbols-outlined text-base">contacts_product</span>
+              Área do Aluno
+              <span className="material-symbols-outlined text-base">account_circle</span>
             </a>
           </div>
         )}
